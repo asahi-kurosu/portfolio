@@ -55,48 +55,97 @@ a {
   z-index: -1;
 }
 
-.speech-bubble {
-  border-radius: 64% 36% 55% 45% / 28% 52% 48% 72%;
-}
-
-.speech-bubble::after {
-  background: #ffffff;
-  clip-path: polygon(0 0, 100% 24%, 38% 100%);
-  content: "";
-  height: 42px;
-  position: absolute;
-  right: 16px;
-  top: 74%;
-  transform: rotate(8deg);
-  width: 76px;
-}
-
 .marker-line {
   background: linear-gradient(transparent 58%, #fff9a6 58%);
 }
 
-.blob-about {
-  border-radius: 17% 13% 21% 18% / 15% 18% 22% 20%;
+.strength-icon {
+  display: inline-block;
+  flex: none;
+  overflow: hidden;
+  position: relative;
 }
 
-.blob-skill {
-  border-radius: 22% 18% 17% 24% / 18% 20% 24% 18%;
+.strength-icon img {
+  max-width: none;
+  position: absolute;
 }
 
-.feature-blob {
-  border-radius: 18% 15% 20% 18% / 16% 18% 20% 19%;
+.strength-icon-ai {
+  height: 37px;
+  width: 32px;
 }
 
-.feature-blob:nth-child(2) {
-  border-radius: 13% 20% 18% 21% / 19% 15% 21% 17%;
+.strength-icon-ai img {
+  height: 533.33%;
+  left: -31.1%;
+  top: -84.11%;
+  width: 595.35%;
 }
 
-.feature-blob:nth-child(3) {
-  border-radius: 18% 21% 16% 19% / 17% 16% 21% 19%;
+.strength-icon-visual {
+  height: 36px;
+  width: 37px;
+}
+
+.strength-icon-visual img {
+  height: 547.59%;
+  left: -329.44%;
+  top: -78.88%;
+  width: 519.8%;
+}
+
+.strength-icon-frontend {
+  height: 24px;
+  width: 24px;
+}
+
+.strength-icon-frontend img {
+  height: 846.28%;
+  left: -65.22%;
+  top: -401.65%;
+  width: 841.83%;
+}
+
+.strength-icon-uiux {
+  height: 32px;
+  width: 28px;
+}
+
+.strength-icon-uiux img {
+  height: 562.64%;
+  left: -474.44%;
+  top: -232.97%;
+  width: 654.31%;
+}
+
+.strength-icon-illustration {
+  height: 22px;
+  width: 23px;
+}
+
+.strength-icon-illustration img {
+  height: 835.92%;
+  left: -58.17%;
+  top: -627.76%;
+  width: 815.94%;
+}
+
+.strength-icon-world {
+  height: 33px;
+  width: 32px;
+}
+
+.strength-icon-world img {
+  height: 549.06%;
+  left: -350.14%;
+  top: -387.13%;
+  width: 564.19%;
 }
 
 .blob-wide {
-  border-radius: 42px 58px 50px 46px / 44px 42px 58px 48px;
+  border-radius: 64px;
+  clip-path: url("#wide-blob");
 }
 
 .tape {
@@ -148,6 +197,7 @@ a {
   .feature-blob,
   .blob-wide {
     border-radius: 34px;
+    clip-path: none;
   }
 
   .blue-band::before {

@@ -3,30 +3,87 @@ import Image from "next/image";
 const navItems = ["About", "Works", "Skills", "Career", "Contact"];
 
 const strengths = [
-  { label: "AIと開発", color: "bg-[#bbe2f6]" },
-  { label: "視覚デザイン", color: "bg-[#fff9a6]" },
-  { label: "フロントエンド", color: "bg-[#cb8adb]" },
-  { label: "UI/UX 改善", color: "bg-[#a68adb]" },
-  { label: "イラスト", color: "bg-[#ffc97e]" },
-  { label: "世界観づくり", color: "bg-[#7ec1ff]" },
+  {
+    icon: "ai",
+    label: "AIと開発",
+    color: "bg-[#bbe2f6]",
+    textColor: "text-[#4c8ec5]",
+    width: "w-[118px]",
+  },
+  {
+    icon: "visual",
+    label: "視覚デザイン",
+    color: "bg-[#fff9a6]",
+    textColor: "text-[#603d23]",
+    width: "w-[143px]",
+  },
+  {
+    icon: "frontend",
+    label: "フロントエンド",
+    color: "bg-[#cb8adb]",
+    textColor: "text-[#603d23]",
+    width: "w-[135px]",
+  },
+  {
+    icon: "uiux",
+    label: "UI/UX 改善",
+    color: "bg-[#a68adb]",
+    textColor: "text-[#603d23]",
+    width: "w-[107px]",
+  },
+  {
+    icon: "illustration",
+    label: "イラスト",
+    color: "bg-[#ffc97e]",
+    textColor: "text-[#603d23]",
+    width: "w-[93px]",
+  },
+  {
+    icon: "world",
+    label: "世界観づくり",
+    color: "bg-[#7ec1ff]",
+    textColor: "text-[#603d23]",
+    width: "w-[131px]",
+  },
 ];
 
 const features = [
   {
     title: "数字で語れる成果",
-    copy: "新卒で配属されたセールスチームで、テレアポ獲得率を改善。",
+    copy: (
+      <>
+        新卒で配属されたセールスチームで、
+        <br />
+        テレアポ獲得率を改善。
+      </>
+    ),
     badge: "19.8% → 40.7%",
-    tape: "right",
   },
   {
     title: "AI ネイティブな開発スタイル",
-    copy: "Codex / Claude Code を活用し、高速で開発＆改善。",
+    copy: (
+      <>
+        Codex / Claude Code を活用し、
+        <br />
+        高速で開発＆改善。
+      </>
+    ),
     tags: ["Next.js", "TypeScript", "Prisma", "Vercel Blob", "Playwright", "..."],
   },
   {
     title: "デザイン感覚",
-    copy: "イラスト制作で培った視覚デザイン感覚で、UIの伝わりやすさを意識した開発が得意です。",
-    image: "pet-2.png",
+    copy: (
+      <>
+        イラスト制作で培った
+        <br />
+        視覚デザイン感覚で、
+        <br />
+        UI の「伝わりやすさ」を
+        <br />
+        意識した開発が得意です。
+      </>
+    ),
+    image: "feature-girl-figma.png",
     tape: "right",
   },
 ];
@@ -34,23 +91,71 @@ const features = [
 const works = [
   {
     title: "MyKitchen - レシピ管理 Web アプリ",
-    body: "日々の料理、買い物、レシピの保存をまとめて扱える個人開発アプリです。",
-    image: "work-1.png",
-    tags: ["Next.js", "TypeScript", "Prisma", "Playwright"],
+    body: (
+      <>
+        <span className="whitespace-nowrap">
+          Next.js + TypeScript + Prisma で作る
+        </span>
+        <br />
+        <span className="whitespace-nowrap">
+          個人利用向けレシピ管理 Web アプリ。
+        </span>
+        <br />
+        <span className="whitespace-nowrap">
+          買い物リスト・画像アップロード・E2E テストまで実装。
+        </span>
+        <br />
+      </>
+    ),
+    image: "work-2.png",
+    tags: ["Next.js", "TypeScript", "Prisma", "Vercel Blob", "Playwright"],
+    variant: "blue",
+    viewMoreColor: "bg-[#2e6ea6] text-white",
+    links: [
+      ["🌐 Live", "https://app-my-recipe.vercel.app/"],
+      ["📦 Repo", "https://github.com/ohiromeya-web-hands-on/app_my-recipe"],
+    ],
   },
   {
-    title: "ポートフォリオ - Works Frame 再現",
-    body: "Figmaの世界観をもとに、静的UIとして再構成したポートフォリオです。",
-    image: "work-2.png",
-    tags: ["Figma MCP", "Tailwind CSS", "App Router"],
+    title: "もぐもぐパン HP - WordPress 練習用 HP",
+    body: (
+      <>
+        パン屋さんを題材に、
+        <br />
+        Web 制作でよく使う要素を全部入れた
+        <br />
+        WordPress 練習用サイト。題材選定から自分で実施。
+      </>
+    ),
+    image: "work-1.png",
+    tags: ["WordPress", "Vite", "Docker", "GitHub Actions"],
+    variant: "cream",
+    viewMoreColor: "bg-[#603d23] text-[#fff067]",
+    links: [],
   },
 ];
 
 const skillGroups = [
-  ["Frontend", "Next.js / React / TypeScript / Tailwind CSS"],
-  ["Backend / DB", "Prisma / PostgreSQL / Auth.js"],
-  ["Tools", "Vercel / Playwright / GitHub"],
-  ["Design", "Figma / UI Review / Illustration"],
+  {
+    title: "Fronted",
+    badgeColor: "bg-[#eda4b7]",
+    items: ["React", "Next.js", "TypeScript", "HTML / CSS", "WordPress"],
+  },
+  {
+    title: "Backend / DB",
+    badgeColor: "bg-[#4c8ec5]",
+    items: ["Prisma", "PostgreSQL", "Auth.js"],
+  },
+  {
+    title: "Test / QA",
+    badgeColor: "bg-[#ffd23b]",
+    items: ["Vitest", "Playwright", "axe"],
+  },
+  {
+    title: "Infra",
+    badgeColor: "bg-[#a68adb]",
+    items: ["Vercel", "GitHub Actions", "Docker"],
+  },
 ];
 
 const careerCards = [
@@ -70,19 +175,68 @@ function asset(name: string) {
   return `/portfolio-assets/${name}`;
 }
 
+function StrengthIcon({ name }: { name: string }) {
+  const source =
+    name === "visual" || name === "illustration"
+      ? "strength-visual-sheet.png"
+      : `strength-${name}-sheet.png`;
+
+  return (
+    <span className={`strength-icon strength-icon-${name}`} aria-hidden="true">
+      <Image src={asset(source)} alt="" width={2048} height={2048} unoptimized />
+    </span>
+  );
+}
+
+function OrganicShapeDefs() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="pointer-events-none absolute size-0"
+      focusable="false"
+    >
+      <defs>
+        <clipPath id="speech-blob" clipPathUnits="objectBoundingBox">
+          <path d="M.08,.18 C.14,.08 .23,.13 .32,.08 S.49,.04 .58,.08 S.78,.03 .88,.07 C.96,.1 .97,.19 .95,.27 C.93,.35 .98,.43 .96,.52 C.94,.61 .98,.68 .92,.74 C.85,.81 .75,.78 .66,.82 S.47,.84 .38,.86 S.19,.88 .11,.81 C.04,.75 .06,.66 .03,.59 C0,.51 .04,.44 .02,.36 C0,.29 .04,.23 .08,.18 Z" />
+        </clipPath>
+        <clipPath id="about-blob" clipPathUnits="objectBoundingBox">
+          <path d="M.09,.09 C.16,.02 .26,.07 .36,.05 S.55,.07 .65,.05 S.84,.04 .92,.1 C.98,.16 .97,.27 .98,.37 S.99,.57 .95,.67 C.91,.77 .81,.81 .73,.87 S.54,.91 .44,.94 S.24,.95 .14,.9 C.05,.85 .04,.74 .03,.64 S.02,.44 .04,.34 S.03,.16 .09,.09 Z" />
+        </clipPath>
+        <clipPath id="skill-blob" clipPathUnits="objectBoundingBox">
+          <path d="M.09,.08 C.19,.03 .3,.06 .4,.05 S.61,.07 .72,.04 S.91,.05 .96,.15 C.99,.25 .96,.36 .97,.47 S.99,.69 .96,.8 C.93,.91 .82,.95 .71,.95 S.5,.96 .39,.95 S.18,.97 .1,.9 C.03,.83 .05,.72 .03,.61 S.04,.39 .03,.28 S.03,.13 .09,.08 Z" />
+        </clipPath>
+        <clipPath id="feature-blob-a" clipPathUnits="objectBoundingBox">
+          <path d="M.08,.08 C.17,.03 .27,.07 .37,.04 S.58,.07 .69,.04 S.9,.03 .96,.13 C.99,.23 .97,.35 .98,.46 S.97,.68 .98,.79 C.97,.9 .87,.95 .76,.95 S.55,.97 .44,.96 S.22,.98 .12,.92 C.04,.86 .04,.75 .03,.64 S.03,.42 .04,.31 S.02,.14 .08,.08 Z" />
+        </clipPath>
+        <clipPath id="feature-blob-b" clipPathUnits="objectBoundingBox">
+          <path d="M.07,.1 C.15,.03 .26,.07 .36,.04 S.57,.07 .68,.04 S.89,.03 .96,.12 C.99,.22 .97,.34 .98,.45 S.97,.67 .98,.78 C.98,.89 .88,.95 .77,.95 S.56,.98 .45,.96 S.23,.98 .13,.93 C.04,.87 .04,.76 .03,.65 S.03,.43 .04,.32 S.02,.16 .07,.1 Z" />
+        </clipPath>
+        <clipPath id="feature-blob-c" clipPathUnits="objectBoundingBox">
+          <path d="M.09,.08 C.18,.03 .28,.07 .38,.04 S.59,.07 .7,.04 S.91,.04 .96,.14 C.99,.24 .97,.36 .98,.47 S.97,.69 .98,.8 C.96,.91 .86,.95 .75,.95 S.54,.98 .43,.96 S.21,.97 .11,.91 C.04,.84 .04,.73 .03,.62 S.03,.4 .04,.29 S.03,.13 .09,.08 Z" />
+        </clipPath>
+        <clipPath id="wide-blob" clipPathUnits="objectBoundingBox">
+          <path d="M.06,.09 C.14,.03 .23,.07 .33,.04 S.52,.07 .62,.04 S.82,.03 .91,.07 C.98,.12 .97,.23 .98,.34 S.97,.55 .98,.66 C.98,.78 .94,.87 .85,.92 C.76,.97 .66,.94 .56,.97 S.36,.96 .26,.97 C.15,.97 .06,.92 .04,.82 S.03,.61 .03,.5 S.02,.29 .04,.19 C.04,.14 .05,.11 .06,.09 Z" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
+
 function SectionTitle({
   children,
   color = "text-[#db8a9d]",
+  underlineColor = "bg-[#866452]",
 }: {
   children: React.ReactNode;
   color?: string;
+  underlineColor?: string;
 }) {
   return (
     <div className="mb-5">
       <h2 className={`font-display text-[34px] font-black leading-none ${color}`}>
         {children}
       </h2>
-      <div className="mt-3 h-[5px] w-[86px] rounded-full bg-[#866452]" />
+      <div className={`mt-3 h-[5px] w-[86px] rounded-full ${underlineColor}`} />
     </div>
   );
 }
@@ -111,8 +265,8 @@ function Logo({ compact = false }: { compact?: boolean }) {
 
 function Header() {
   return (
-    <header className="h-[90px] bg-[#bbe2f6]">
-      <div className="mx-auto flex h-full max-w-[1080px] items-center justify-between px-4">
+    <header className="h-[90px] w-full bg-[#bbe2f6]">
+      <div className="mx-auto flex h-full w-full max-w-[1024px] items-center justify-between px-8">
         <Logo />
         <nav className="hidden items-center gap-7 font-display text-[19px] font-black text-[#4c8ec5] md:flex">
           {navItems.map((item) => (
@@ -128,29 +282,64 @@ function Header() {
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[610px] overflow-hidden px-8 pt-8">
-      <div className="speech-bubble absolute left-[54px] top-[48px] z-10 w-[590px] rotate-[-2deg] bg-white px-12 py-8">
-        <p className="font-display text-[36px] font-black leading-[1.18] text-[#db8a9d]">
-          <span className="marker-line">デザイン感覚 × AI ネイティブで、</span>
-          <br />
-          現代的なフロント開発に挑む
-        </p>
-      </div>
-
-      <div className="absolute left-[82px] top-[205px] z-20 rotate-[-4deg] rounded-[28px] border-[6px] border-white bg-[#4c8ec5] px-10 py-4 text-white">
-        <p className="font-display text-[25px] font-black leading-[1.25]">
-          フロントエンドエンジニア志望！
-          <br />
-          黒須朝陽（くろす あさひ）
-        </p>
-      </div>
-
-      <div className="absolute right-[68px] top-[65px] h-[500px] w-[710px]">
+    <section className="relative min-h-[650px] overflow-hidden px-8 pt-8">
+      <div className="absolute left-[46px] top-[48px] z-20 h-[168px] w-[610px] rotate-[-4.18deg]">
         <Image
-          src={asset("hero.png")}
+          src={asset("hero-speech-figma.svg")}
+          alt=""
+          fill
+          sizes="610px"
+          className="object-fill"
+        />
+        <Image
+          src={asset("hero-speech-tail-figma.svg")}
+          alt=""
+          width={51}
+          height={84}
+          className="absolute bottom-[-21px] right-[27px] h-[60px] w-[36px] rotate-[123deg]"
+        />
+        <div className="absolute inset-0 z-[1] flex items-center justify-center px-10 pb-1">
+          <p className="w-fit text-left font-display font-black leading-[1.2] text-[#db8a9d]">
+            <span className="marker-line inline-block whitespace-nowrap text-[34px]">
+              デザイン感覚
+              <span className="text-[28px]"> × </span>
+              AI ネイティブ
+              <span className="text-[28px]">で、</span>
+            </span>
+            <span className="block whitespace-nowrap text-[34px]">
+              現代的
+              <span className="text-[28px]">な</span>
+              フロント開発
+              <span className="text-[28px]">に</span>
+              挑む
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div className="absolute left-[70px] top-[188px] z-30 flex h-[92px] w-[448px] rotate-[-4.48deg] items-center px-[30px] text-white">
+        <Image
+          src={asset("hero-blue-label-figma.svg")}
+          alt=""
+          fill
+          sizes="448px"
+          className="object-fill"
+        />
+        <p className="relative z-[1] mx-auto w-fit text-left font-display text-[23px] font-black leading-[1.25]">
+          <span className="whitespace-nowrap">
+            フロントエンドエンジニア志望！
+          </span>
+          <br />
+          <span className="whitespace-nowrap">黒須朝陽（くろす あさひ）</span>
+        </p>
+      </div>
+
+      <div className="absolute bottom-0 right-[20px] z-10 h-[630px] w-[910px]">
+        <Image
+          src={asset("hero-cropped.png")}
           alt="スケートボードに乗る人物と犬のイラスト"
           fill
-          sizes="710px"
+          sizes="910px"
           className="object-contain object-center"
           priority
         />
@@ -162,43 +351,105 @@ function HeroSection() {
 function AboutSection() {
   return (
     <section id="about" className="relative px-8 pb-9">
-      <div className="grid grid-cols-[1.95fr_1fr] gap-8">
-        <div className="blob-about relative min-h-[330px] bg-white px-16 py-12">
-          <span className="tape tape-green left-10 top-5 rotate-[-10deg]" />
-          <SectionTitle>About</SectionTitle>
-          <div className="grid grid-cols-[170px_1fr] items-center gap-10">
+      <div className="grid grid-cols-[1.95fr_1.05fr] gap-6">
+        <div className="relative">
+          <div className="relative min-h-[350px] px-12 py-6">
             <Image
-              src={asset("logo.png")}
+              src={asset("about-card-figma.svg")}
               alt=""
-              width={220}
-              height={120}
-              className="w-[170px] object-contain"
+              fill
+              sizes="650px"
+              className="object-fill"
             />
-            <p className="max-w-[520px] text-[15px] font-black leading-[1.68] text-[#603d23]">
-              AIマーケティング会社の inglow に新卒入社し、セールスチームや
-              YouTube グロースチームを経て、現在は Codex / Claude Code
-              を主軸にした AI ネイティブなスタイルで Next.js + TypeScript
-              の Web アプリを継続開発しています。イラストで培った視覚感覚を
-              AI 出力のレビューに活かしながら、現代的なフロント開発に挑んでいきます。
-            </p>
+            <div className="relative z-[1] grid min-h-[302px] grid-cols-[170px_1fr] content-center items-start gap-5">
+              <div className="flex flex-col items-start">
+                <div className="ml-4">
+                  <SectionTitle underlineColor="bg-[#db8a9d]">About</SectionTitle>
+                </div>
+                <Image
+                  src={asset("logo.png")}
+                  alt=""
+                  width={220}
+                  height={120}
+                  className="-mt-[66px] w-[175px] object-contain"
+                />
+              </div>
+              <p className="whitespace-nowrap pt-0.5 text-[13px] font-black leading-[1.55] text-[#603d23]">
+                AIマーケティング会社の inglow に新卒入社し、
+                <br />
+                セールスチームやYouTube グロースチームを経て、
+                <br />
+                現在は Codex / Claude Code を主軸にした
+                <br />
+                AI ネイティブなスタイルで
+                <br />
+                Next.js + TypeScript の Web アプリを継続開発しています。
+                <br />
+                高校時代には父に教わって始めた中国語で、
+                <br />
+                スピーチコンテストの世界大会（漢語橋）に
+                <br />
+                日本代表として出場した経験もあります。
+                <br />
+                イラストで培った視覚感覚を
+                <br />
+                AI 出力のレビューに活かしながら、
+                <br />
+                現代的なフロント開発に挑んでいきます。
+              </p>
+            </div>
           </div>
+          <Image
+            src={asset("paperclip-figma.png")}
+            alt=""
+            width={432}
+            height={398}
+            className="absolute left-[72px] top-0 z-[2] h-auto w-[51px] rotate-[277deg]"
+          />
         </div>
 
-        <div className="blob-skill relative min-h-[330px] bg-white px-8 py-10">
-          <span className="tape tape-pink right-8 top-3 rotate-[20deg]" />
-          <h3 className="mx-auto mb-8 flex w-fit rounded-full bg-[#db8a9d] px-8 py-4 font-display text-[24px] font-black text-white">
+        <div className="relative mt-4 self-start">
+          <div className="relative min-h-[290px] px-6 pb-8 pt-[82px]">
+            <Image
+              src={asset("strength-card-figma.svg")}
+              alt=""
+              fill
+              sizes="330px"
+              className="object-fill"
+            />
+            <div className="relative z-[1] mx-auto flex w-fit flex-col items-start gap-4">
+              {[strengths.slice(0, 2), strengths.slice(2, 4), strengths.slice(4, 6)].map(
+                (row) => (
+                  <div
+                    key={row.map((item) => item.label).join("-")}
+                    className="flex items-center justify-start gap-[8px]"
+                  >
+                    {row.map((item) => (
+                      <span
+                        key={item.label}
+                        className={`${item.color} ${item.textColor} ${item.width} inline-flex min-h-[42px] items-center justify-center gap-1 whitespace-nowrap rounded-full px-4 text-[13px] font-black`}
+                      >
+                        <StrengthIcon name={item.icon} />
+                        {item.label}
+                      </span>
+                    ))}
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+          <span className="absolute right-[8px] top-[-10px] z-[2] h-[48px] w-[90px] rotate-[25deg] overflow-hidden">
+            <Image
+              src={asset("tape-pink-figma.png")}
+              alt=""
+              width={864}
+              height={260}
+              className="absolute left-[-10%] top-[12px] h-full w-[122%] max-w-none"
+            />
+          </span>
+          <h3 className="absolute left-[34px] top-[-12px] z-[3] flex w-fit rounded-full bg-[#db8a9d] px-7 py-3 font-display text-[22px] font-black text-white">
             得意なこと
           </h3>
-          <div className="grid grid-cols-2 gap-4">
-            {strengths.map((item) => (
-              <span
-                key={item.label}
-                className={`${item.color} inline-flex min-h-[44px] items-center justify-center rounded-full px-4 text-[15px] font-black text-[#603d23]`}
-              >
-                {item.label}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -207,48 +458,86 @@ function AboutSection() {
 
 function FeatureCardsSection() {
   return (
-    <section className="relative px-8 pb-16 pt-5">
+    <section className="relative px-0 pb-16 pt-5">
       <div className="grid grid-cols-3 gap-6">
         {features.map((feature, index) => (
           <article
             key={feature.title}
-            className={`feature-blob relative min-h-[250px] overflow-hidden bg-white px-9 py-10 ${
+            className={`relative h-[305px] px-8 pt-[66px] ${
               index === 1 ? "translate-y-[-4px]" : ""
             }`}
           >
+            <Image
+              src={asset("feature-card-figma-crop.png")}
+              alt=""
+              fill
+              sizes="315px"
+              className="z-0 object-fill"
+            />
             {feature.tape && (
-              <span className="tape tape-green right-10 top-1 rotate-[8deg]" />
+              <span className="absolute left-[52px] top-[10px] z-[2] h-[31px] w-[88px] rotate-[8deg] overflow-hidden">
+                <Image
+                  src={asset("pet-1.png")}
+                  alt=""
+                  width={864}
+                  height={260}
+                  className="absolute left-[-10.42%] top-0 h-full w-[121.69%] max-w-none"
+                />
+              </span>
             )}
-            <h3 className="mb-5 max-w-[270px] font-display text-[27px] font-black leading-tight text-[#603d23]">
-              {feature.title}
-            </h3>
-            <p className="mb-6 text-[16px] font-black leading-[1.45] text-[#4c8ec5]">
-              {feature.copy}
-            </p>
-            {feature.badge && (
-              <div className="inline-flex rounded-[22px] border-[4px] border-[#f1b1c0] px-6 py-3 font-display text-[24px] font-black text-[#db8a9d]">
-                {feature.badge}
-              </div>
+            {index === 0 && (
+              <Image
+                src={asset("feature-chart-figma.png")}
+                alt=""
+                width={120}
+                height={120}
+                className="absolute right-8 top-[16px] z-[1] w-[92px] rotate-[10deg]"
+              />
             )}
-            {feature.tags && (
-              <div className="flex max-w-[290px] flex-wrap gap-3">
-                {feature.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-[#bbe2f6] px-5 py-2 text-[13px] font-black text-[#4c8ec5]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
+            <div className="relative z-[1]">
+              <h3 className="mb-3 whitespace-nowrap font-display text-[19px] font-black leading-tight text-[#603d23]">
+                {feature.title}
+              </h3>
+              <p
+                className={`mb-5 font-black leading-[1.42] text-[#4c8ec5] ${
+                  index === 2
+                    ? "max-w-[255px] text-[13px]"
+                    : "max-w-[270px] text-[14px]"
+                }`}
+              >
+                {feature.copy}
+              </p>
+              {feature.badge && (
+                <div className="inline-flex items-baseline rounded-[22px] border-[4px] border-[#f1b1c0] px-6 py-2 font-display font-black">
+                  <span className="text-[23px] text-[#f1b1c0]">19.8%</span>
+                  <span className="px-2 text-[17px] text-[#603d23]">→</span>
+                  <span className="text-[26px] text-[#db8a9d]">40.7%</span>
+                </div>
+              )}
+              {feature.tags && (
+                <div className="flex max-w-[258px] flex-wrap gap-x-2 gap-y-2">
+                  {feature.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={
+                        tag === "..."
+                          ? "inline-flex h-[28px] items-center justify-center px-1 text-[11px] font-black text-[#4c8ec5]"
+                          : "inline-flex h-[28px] items-center justify-center rounded-full bg-[#bbe2f6] px-3 text-[11px] font-black text-[#4c8ec5]"
+                      }
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
             {feature.image && (
               <Image
                 src={asset(feature.image)}
                 alt=""
-                width={135}
-                height={120}
-                className="absolute bottom-0 right-5 w-[122px] object-contain"
+                width={223}
+                height={279}
+                className="absolute bottom-[-12px] right-[-6px] z-[2] w-[126px] -scale-x-100 object-contain"
               />
             )}
           </article>
@@ -261,37 +550,103 @@ function FeatureCardsSection() {
 
 function WorksSection() {
   return (
-    <section id="works" className="blue-band px-8 py-12">
-      <SectionTitle color="text-[#4c8ec5]">Works</SectionTitle>
-      <div className="grid gap-6 md:grid-cols-2">
-        {works.map((work) => (
+    <section id="works" className="relative isolate px-8 pb-16 pt-12">
+      <svg
+        aria-hidden="true"
+        className="absolute inset-x-[-70px] bottom-0 top-[-22px] z-0 h-[calc(100%+22px)] w-[calc(100%+140px)] overflow-hidden"
+        preserveAspectRatio="none"
+        viewBox="0 0 1866.79 897.954"
+      >
+        <path
+          d="M222.222 10.9544C722.222 -50.0473 1277.22 169.453 1690.22 41.9532C2103.22 -85.5464 1662.22 897.954 1662.22 897.954H1307.72L939.722 873.453L222.222 897.954C222.222 897.954 -277.778 71.9562 222.222 10.9544Z"
+          fill="#BBE2F6"
+        />
+      </svg>
+      <div className="relative z-[1]">
+        <SectionTitle color="text-[#4c8ec5]" underlineColor="bg-[#4c8ec5]">
+          Works
+        </SectionTitle>
+      </div>
+      <div className="relative z-[1] grid items-start gap-5 md:grid-cols-2">
+        {works.map((work, index) => (
           <article
             key={work.title}
-            className="rotate-[-1deg] rounded-[26px] border-4 border-white bg-[#bbe2f6] p-4 odd:rotate-[1deg]"
+            className={`relative h-[520px] rounded-[30px] border-[5px] border-white p-3 pb-12 ${
+              work.variant === "cream" ? "bg-[#fff4d5]" : "bg-[#bbe2f6]"
+            } ${index === 0 ? "rotate-[-2.4deg]" : "rotate-[3.6deg]"}`}
           >
-            <Image
-              src={asset(work.image)}
-              alt=""
-              width={560}
-              height={340}
-              className="aspect-[16/10] w-full rounded-[18px] border-4 border-white object-cover"
-            />
-            <h3 className="mt-4 font-display text-[22px] font-black text-[#603d23]">
+            <span
+              className={`absolute z-[2] h-[46px] w-[118px] overflow-hidden ${
+                index === 0
+                  ? "left-[-48px] top-[-31px] rotate-[-18deg]"
+                  : "left-[-10px] top-[-39px] rotate-[-25deg]"
+              }`}
+            >
+              <Image
+                src={asset(index === 0 ? "pet-1.png" : "tape-pink-figma.png")}
+                alt=""
+                width={864}
+                height={260}
+                className="absolute left-[-10%] top-0 h-full w-[122%] max-w-none"
+              />
+            </span>
+            <div className="relative h-[282px] w-full overflow-hidden rounded-[22px] border-[4px] border-white">
+              <Image
+                src={asset(work.image)}
+                alt=""
+                fill
+                sizes="480px"
+                className="scale-[1.18] object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20" />
+            </div>
+            <h3
+              className={`mt-4 font-display font-black leading-tight ${
+                index === 0 ? "text-[22px]" : "text-[20px]"
+              } ${work.variant === "blue" ? "text-[#2e6ea6]" : "text-[#603d23]"}`}
+            >
               {work.title}
             </h3>
-            <p className="mt-2 text-[15px] font-black leading-relaxed text-[#4c8ec5]">
+            <p
+              className={`mt-2 min-h-[76px] font-black leading-[1.45] ${
+                work.variant === "cream"
+                  ? "text-[15px] text-[#603d23]"
+                  : "text-[15px] text-[#4c8ec5]"
+              }`}
+            >
               {work.body}
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-nowrap items-center gap-1.5">
               {work.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-white px-3 py-1.5 text-xs font-black text-[#4c8ec5]"
+                  className={`whitespace-nowrap rounded-full px-2.5 py-1.5 text-[11px] font-black ${
+                    work.variant === "cream"
+                      ? "bg-[#fff067] text-[#603d23]"
+                      : "bg-white text-[#4c8ec5]"
+                  }`}
                 >
                   {tag}
                 </span>
               ))}
             </div>
+            <div className="absolute bottom-5 left-5 flex gap-2 text-[12px] font-black text-[#2e6ea6]">
+              {work.links.map(([label, href]) => (
+                <a key={label} href={href} className="border-b border-dotted border-current">
+                  {label}
+                </a>
+              ))}
+            </div>
+            <a
+              href="#contact"
+              className={`absolute rounded-[10px] px-5 py-2 font-display text-[18px] font-black ${
+                index === 0
+                  ? "bottom-[-13px] right-[76px] rotate-[-10deg]"
+                  : "bottom-[-17px] right-[268px] rotate-[12deg]"
+              } ${work.viewMoreColor}`}
+            >
+              view more→
+            </a>
           </article>
         ))}
       </div>
@@ -301,23 +656,127 @@ function WorksSection() {
 
 function SkillsSection() {
   return (
-    <section id="skills" className="px-8 py-10">
-      <div className="blob-wide bg-white px-10 py-9">
-        <SectionTitle>Skills</SectionTitle>
-        <div className="grid gap-4 md:grid-cols-4">
-          {skillGroups.map(([title, body]) => (
+    <section id="skills" className="relative px-8 pb-12 pt-8">
+      <div className="relative isolate min-h-[820px] overflow-visible px-12 pb-16 pt-20">
+        <Image
+          aria-hidden="true"
+          src={asset("skills-bg-figma.svg")}
+          alt=""
+          fill
+          sizes="1024px"
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-fill"
+        />
+        <span className="absolute left-[54px] top-[-28px] z-[2] h-[40px] w-[112px] rotate-[-15deg] overflow-hidden">
+          <Image
+            src={asset("tape-pink-figma.png")}
+            alt=""
+            width={864}
+            height={260}
+            className="absolute left-[-10%] top-0 h-full w-[122%] max-w-none"
+          />
+        </span>
+        <Image
+          src={asset("skills-img-4122-2.png")}
+          alt=""
+          width={433}
+          height={569}
+          className="absolute right-[20px] top-[-78px] z-[3] w-[180px] object-contain"
+        />
+
+        <SectionTitle underlineColor="bg-[#db8a9d]">Skills</SectionTitle>
+        <p className="mb-8 text-[16px] font-black leading-relaxed text-[#603d23]">
+          ※ 学習プログラム配下のプロジェクト（MyKitchen / もぐもぐパン HP）で使用した技術スタックです。
+        </p>
+
+        <div className="mb-8 grid gap-4 md:grid-cols-4">
+          {skillGroups.map((group) => (
             <article
-              key={title}
-              className="rounded-[18px] border-[3px] border-[#f1b1c0] p-4"
+              key={group.title}
+              className="min-h-[205px] rounded-[30px] border-[3px] border-[#d4d4d4] bg-white px-5 py-5"
             >
-              <h3 className="mb-2 font-display text-[17px] font-black text-[#db8a9d]">
-                {title}
+              <h3
+                className={`${group.badgeColor} mb-4 inline-flex min-w-[112px] justify-center rounded-full px-5 py-2 font-display text-[18px] font-black text-white`}
+              >
+                {group.title}
               </h3>
-              <p className="text-[13px] font-black leading-relaxed text-[#603d23]">
-                {body}
-              </p>
+              <ul className="space-y-3 text-[16px] font-black leading-tight text-[#603d23]">
+                {group.items.map((item) => (
+                  <li key={item}>・{item}</li>
+                ))}
+              </ul>
             </article>
           ))}
+        </div>
+
+        <div className="rounded-[28px] border-[3px] border-[#db8a9d] bg-[#f9edf1] px-7 py-7">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h3 className="mb-5 font-display text-[24px] font-black text-[#db8a9d]">
+                ★ AI ツール活用
+              </h3>
+              <h4 className="mb-4 text-[18px] font-black text-[#db8a9d]">
+                ◆ 実プロジェクトで使用経験
+              </h4>
+              <div className="space-y-3 text-[14px] font-black leading-relaxed text-[#603d23]">
+                <p>
+                  ・Codex — 現在の中核プロジェクト MyKitchen で主軸とし
+                  <br />
+                  て使用
+                </p>
+                <p>・Claude Code — 過去プロジェクトで使用経験あり</p>
+                <p>→ どちらのツールを使う現場でも対応可能</p>
+              </div>
+              <div className="mt-5 inline-flex rounded-[14px] border-[2px] border-[#db8a9d] bg-white px-5 py-3 text-[12px] font-black leading-snug text-[#603d23]">
+                補助で使うもの: ChatGPT / 公式ドキュメント / メンターへの質問 /
+                <br />
+              </div>
+            </div>
+
+            <div>
+              <h4 className="mb-4 text-[18px] font-black text-[#db8a9d]">
+                ◆ 私のワークフロー
+              </h4>
+              <ol className="mb-8 space-y-3 text-[14px] font-black leading-tight text-[#603d23]">
+                {[
+                  "人（自分）が「目的」を投げる",
+                  "AI が「実装・調査・修正」を返す",
+                  "人（自分）が「確認して方向修正」する",
+                ].map((item, index) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="inline-flex size-6 items-center justify-center rounded-full bg-[#db8a9d] text-white">
+                      {index + 1}
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ol>
+
+              <h4 className="mb-4 text-[18px] font-black text-[#db8a9d]">
+                ◆ AI 出力のレビュー観点
+              </h4>
+              <p className="mb-4 text-[14px] font-black leading-relaxed text-[#603d23]">
+                「動いたけど怪しい」で気づく違和感センサー
+                <br />
+                （イラスト経験で培った UI/UX 感覚を活用）
+              </p>
+              <div className="relative inline-flex rounded-[14px] border-[2px] border-[#db8a9d] bg-white px-6 py-4 text-[12px] font-black leading-snug text-[#603d23]">
+                例: Splide の余白がおかしい / スマホだけ崩れる /
+                <br />
+                ハンバーガーの×がズレる / header 幅がおかしい /
+                <br />
+                アライメントが微妙にズレている等。
+                <span className="absolute right-[-26px] top-[-18px] h-[30px] w-[70px] rotate-[35deg] overflow-hidden">
+                  <Image
+                    src={asset("pet-1.png")}
+                    alt=""
+                    width={864}
+                    height={260}
+                    className="absolute left-[-10%] top-0 h-full w-[122%] max-w-none"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -326,32 +785,168 @@ function SkillsSection() {
 
 function CareerSection() {
   return (
-    <section id="career" className="blue-band px-8 py-12">
-      <SectionTitle color="text-[#4c8ec5]">Career</SectionTitle>
-      <p className="mb-5 text-[16px] font-black leading-relaxed text-[#866452]">
-        株式会社 inglow / 2023年4月 〜 2024年3月。セールスチームから
-        YouTube グロースチームへ異動し、数値改善とチーム展開を経験。
-      </p>
-      <div className="grid gap-4 md:grid-cols-3">
-        {careerCards.map((card) => (
-          <article
-            key={card.label}
-            className="rounded-[24px] border-[3px] border-[#d4d4d4] bg-white p-5"
-          >
-            <h3 className="mb-4 font-display text-[19px] font-black text-[#603d23]">
-              {card.label}
+    <section id="career" className="relative isolate px-8 pb-16 pt-16">
+      <svg
+        aria-hidden="true"
+        className="absolute inset-x-[-34px] bottom-[-6px] top-0 -z-10 h-full w-[calc(100%+68px)]"
+        preserveAspectRatio="none"
+        viewBox="0 0 1024 760"
+      >
+        <path
+          d="M76 34C214-10 358 52 500 20C635-10 793 8 906 76C996 130 994 260 972 386C950 513 995 644 891 698C775 758 632 702 504 715C362 729 227 786 121 706C21 630 51 493 50 365C50 234-27 99 76 34Z"
+          fill="#BBE2F6"
+        />
+      </svg>
+
+      <div className="relative z-[1] px-6">
+        <SectionTitle color="text-[#4c8ec5]" underlineColor="bg-[#4c8ec5]">
+          Career
+        </SectionTitle>
+
+        <div className="mb-7 space-y-1 text-[16px] font-black leading-relaxed text-[#866452]">
+          <p className="text-[#4c8ec5]">株式会社 inglow</p>
+          <p>2023年4月 〜 2024年3月（新卒で計１年）</p>
+          <p>2023/4 セールスチーム配属 → 2023/10 YouTube グロースチーム異動</p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-3">
+          <article className="rounded-[20px] border-[3px] border-[#d4d4d4] bg-white px-6 py-4">
+            <h3 className="mb-3 text-center text-[17px] font-black text-[#4c8ec5]">
+              個人アポイント獲得率
             </h3>
-            <div className="flex items-center gap-3">
-              <MetricBox label="Before" value={card.before} />
-              <span className="font-display text-xl font-black text-[#4c8ec5]">
-                →
-              </span>
-              <MetricBox label="After" value={card.after} emphasize />
+            <div className="flex items-center justify-center gap-5">
+              <CareerMetricBox label="Q1" value="19.8%" caption="社内1位" />
+              <span className="text-[20px] font-black text-[#4c8ec5]">→</span>
+              <CareerMetricBox label="Q2" value="40.7%" caption="社内1位" />
             </div>
           </article>
-        ))}
+
+          <article className="rounded-[20px] border-[3px] border-[#d4d4d4] bg-white px-6 py-4">
+            <h3 className="mb-3 text-center text-[17px] font-black text-[#4c8ec5]">
+              チーム平均アポイント獲得率
+            </h3>
+            <div className="flex items-center justify-center gap-5">
+              <CareerMetricBox label="Q1" value="17.3%" />
+              <span className="text-[20px] font-black text-[#4c8ec5]">→</span>
+              <CareerMetricBox label="Q2" value="32.3%" caption="過去最大" />
+            </div>
+          </article>
+
+          <article className="rounded-[20px] border-[3px] border-[#d4d4d4] bg-white px-5 py-4">
+            <h3 className="mb-3 text-[18px] font-black text-[#4c8ec5]">
+              取り組み（セールスチーム期）
+            </h3>
+            <CareerList
+              items={[
+                "個人で勝ったあと、チーム全体に伸び代を見出す",
+                "テレアポマニュアルを整備",
+                "先輩を含めた OJT を実施",
+                "受注率も２四半期連続でチーム内２位",
+              ]}
+            />
+          </article>
+        </div>
+
+        <div className="mt-5 grid gap-5 md:grid-cols-[1fr_2.15fr]">
+          <article className="rounded-[20px] border-[3px] border-[#d4d4d4] bg-white px-6 py-5">
+            <h3 className="mb-4 text-center text-[17px] font-black text-[#4c8ec5]">
+              チャンネル平均再生率
+            </h3>
+            <div className="flex items-center justify-center gap-5">
+              <CareerMetricBox label="Before" value="24%" />
+              <span className="text-[20px] font-black text-[#4c8ec5]">→</span>
+              <CareerMetricBox label="After" value="42%" caption="×1.75" />
+            </div>
+          </article>
+
+          <article className="relative rounded-[20px] border-[3px] border-[#d4d4d4] bg-white px-6 py-5">
+            <span className="absolute right-[-28px] top-[-24px] z-[2] h-[44px] w-[110px] rotate-[25deg] overflow-hidden">
+              <Image
+                src={asset("tape-pink-figma.png")}
+                alt=""
+                width={864}
+                height={260}
+                className="absolute left-[-10%] top-0 h-full w-[122%] max-w-none"
+              />
+            </span>
+            <h3 className="mb-3 text-[18px] font-black text-[#4c8ec5]">
+              取り組み（YouTube グロースチーム期）
+            </h3>
+            <CareerList
+              items={[
+                "チャンネル分析・再設計・市場調査を実施",
+                "企画の選び方・構成・サムネイルを一新",
+              ]}
+            />
+            <p className="mt-3 text-[12px] font-black leading-relaxed text-[#603d23]">
+              → セールス期も YT グロース期も、
+              <br />
+              「現状の数字を分析 → 構造から見直す → 約 1.7〜1.9 倍に改善」
+              <br />
+              という同じ行動原理で動いていることが、この２期間の並列表示で伝わります。
+            </p>
+          </article>
+        </div>
+
+        <article className="relative mt-5 rounded-[20px] border-[3px] border-[#d4d4d4] bg-white px-8 py-5">
+          <h3 className="mb-3 text-[18px] font-black text-[#4c8ec5]">
+            自発的取り組み
+          </h3>
+          <p className="max-w-[690px] text-[12px] font-black leading-relaxed text-[#603d23]">
+            新入社員のオンボーディング支援を、業務外で自発的に実施。
+            <br />
+            「自分も新卒の初めの方で同じように助けてもらったから、
+            自分もそう動こうと思った」のがきっかけです。
+          </p>
+          <Image
+            src={asset("career-img-4124-2.png")}
+            alt=""
+            width={427}
+            height={534}
+            className="absolute bottom-[-54px] right-[120px] w-[230px] object-contain"
+          />
+        </article>
       </div>
     </section>
+  );
+}
+
+function CareerMetricBox({
+  label,
+  value,
+  caption,
+}: {
+  label: string;
+  value: string;
+  caption?: string;
+}) {
+  return (
+    <div className="flex h-[88px] w-[78px] flex-col items-center justify-center rounded-[10px] bg-[#d4d4d4]/70">
+      <p className="text-[11px] font-black text-[#866452]">{label}</p>
+      <p className="font-display text-[24px] font-black leading-tight text-[#db8a9d]">
+        {value}
+      </p>
+      {caption && (
+        <p className="mt-1 rounded-[3px] bg-[#db8a9d] px-2 py-0.5 text-[10px] font-black text-white">
+          {caption}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function CareerList({ items }: { items: string[] }) {
+  return (
+    <ol className="space-y-2 text-[11px] font-black leading-tight text-[#603d23]">
+      {items.map((item, index) => (
+        <li key={item} className="flex gap-2">
+          <span className="mt-[-1px] inline-flex size-[16px] flex-none items-center justify-center rounded-full bg-[#4c8ec5] text-[10px] text-white">
+            {index + 1}
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ol>
   );
 }
 
@@ -430,9 +1025,10 @@ function Footer() {
 
 export function PortfolioPage() {
   return (
-    <main className="min-h-screen bg-[#f4f4f4] text-[#603d23]">
-      <div className="mx-auto min-h-screen w-full max-w-[1200px] overflow-hidden bg-[#f1b1c0]">
-        <Header />
+    <main className="min-h-screen w-screen bg-[#f1b1c0] text-[#603d23]">
+      <OrganicShapeDefs />
+      <Header />
+      <div className="mx-auto min-h-screen w-full max-w-[1024px] overflow-hidden">
         <HeroSection />
         <AboutSection />
         <FeatureCardsSection />
