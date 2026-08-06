@@ -19,6 +19,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.mobile-nav {
+  display: none;
+}
+
+#desktop-baseline {
+  display: block;
+  width: 100%;
+  height: 5204px;
+  border: 0;
+}
+
+#legacy-home {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -187,6 +202,252 @@ a {
 }
 
 @media (max-width: 767px) {
+  #desktop-baseline {
+    display: none;
+  }
+
+  #legacy-home {
+    display: block;
+  }
+
+  html,
+  body,
+  #legacy-home,
+  #legacy-home main {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #legacy-home main {
+    width: 100%;
+  }
+
+  #legacy-home header {
+    height: 118px;
+    min-height: 118px;
+  }
+
+  #legacy-home header > div {
+    height: 76px;
+    min-height: 76px;
+    padding-inline: 18px;
+  }
+
+  #legacy-home header nav {
+    display: none;
+  }
+
+  #legacy-home .mobile-nav {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    height: 40px;
+    margin: -40px 16px 0;
+    padding-top: 10px;
+    border-top: 1px solid rgb(255 255 255 / 60%);
+    position: relative;
+    z-index: 40;
+    font-size: 12px;
+    font-weight: 900;
+    color: #4c8ec5;
+    text-align: center;
+  }
+
+  #legacy-home header img {
+    width: 92px;
+  }
+
+  #legacy-home header p {
+    font-size: 17px;
+  }
+
+  #legacy-home main > div.mx-auto {
+    max-width: 100%;
+  }
+
+  #legacy-home section {
+    padding-inline: 16px;
+  }
+
+  #legacy-home section:first-of-type {
+    min-height: 530px;
+    padding-top: 16px;
+  }
+
+  #legacy-home section:first-of-type > div:nth-of-type(1) {
+    left: 14px;
+    top: 24px;
+    width: calc(100% - 28px);
+    height: 116px;
+    rotate: -2.5deg;
+  }
+
+  #legacy-home section:first-of-type > div:nth-of-type(1) p {
+    font-size: 19px;
+  }
+
+  #legacy-home section:first-of-type > div:nth-of-type(1) p span {
+    font-size: inherit;
+  }
+
+  #legacy-home section:first-of-type > div:nth-of-type(2) {
+    left: 27px;
+    top: 139px;
+    width: min(315px, calc(100% - 54px));
+    height: 70px;
+    padding-inline: 20px;
+    rotate: -3deg;
+  }
+
+  #legacy-home section:first-of-type > div:nth-of-type(2) p {
+    font-size: 16px;
+  }
+
+  #legacy-home section:first-of-type > div:nth-of-type(3) {
+    right: -116px;
+    bottom: -2px;
+    width: 565px;
+    height: 390px;
+  }
+
+  #legacy-home #about > div,
+  #legacy-home #about > div > div,
+  #legacy-home #about + section > div,
+  #legacy-home #works > div[class*="grid"],
+  #legacy-home #skills [class*="grid-cols"],
+  #legacy-home #career [class*="grid-cols"],
+  #legacy-home #contact [class*="grid-cols"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #legacy-home #about {
+    padding-inline: 16px;
+  }
+
+  #legacy-home #about > div {
+    display: grid;
+    gap: 30px;
+  }
+
+  #legacy-home #about > div > div:first-child > div:first-child {
+    min-height: 520px;
+    padding: 40px 28px;
+  }
+
+  #legacy-home #about > div > div:first-child > div:first-child > div {
+    display: block;
+    min-height: 440px;
+  }
+
+  #legacy-home #about > div > div:first-child > div:first-child > div > div:first-child {
+    position: relative;
+    height: 78px;
+  }
+
+  #legacy-home #about > div > div:first-child > div:first-child > div > div:first-child > img {
+    position: absolute;
+    top: -38px;
+    right: -4px;
+    width: 120px;
+    margin: 0;
+  }
+
+  #legacy-home #about > div > div:first-child > div:first-child p {
+    width: auto;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  #legacy-home #about p,
+  #legacy-home #works p,
+  #legacy-home #skills p,
+  #legacy-home #career p {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #legacy-home #about + section {
+    padding-inline: 16px;
+  }
+
+  #legacy-home #about + section > div {
+    display: grid;
+    gap: 16px;
+  }
+
+  #legacy-home #about + section article {
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+    translate: none;
+  }
+
+  #legacy-home #works,
+  #legacy-home #skills,
+  #legacy-home #career,
+  #legacy-home #contact {
+    padding-inline: 16px;
+  }
+
+  #legacy-home #works article {
+    height: auto;
+    min-height: 520px;
+    rotate: 0deg;
+  }
+
+  #legacy-home #works article > div:first-of-type {
+    height: 220px;
+  }
+
+  #legacy-home #works [class*="flex-nowrap"] {
+    flex-wrap: wrap;
+  }
+
+  #legacy-home #skills > div {
+    min-height: 0;
+    padding: 64px 20px 48px;
+  }
+
+  #legacy-home #skills [class*="md:grid-cols-4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #legacy-home #skills article {
+    min-width: 0;
+    padding-inline: 12px;
+  }
+
+  #legacy-home #career > div {
+    padding-inline: 0;
+  }
+
+  #legacy-home #career article {
+    min-width: 0;
+  }
+
+  #legacy-home #career article img,
+  #legacy-home #contact > div > img {
+    display: none;
+  }
+
+  #legacy-home #contact a {
+    overflow-wrap: anywhere;
+  }
+
+  #legacy-home footer {
+    padding-inline: 16px;
+  }
+
+  #legacy-home footer > div,
+  #legacy-home footer nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #legacy-home footer nav {
+    gap: 10px 0;
+  }
+
   .organic-panel {
     border-radius: 34px;
   }

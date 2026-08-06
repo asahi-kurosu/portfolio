@@ -13,6 +13,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className="h-full antialiased">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://portfolio-l2cs3s6so-kurosuasahi-1792s-projects.vercel.app/_next/static/chunks/3cpiwgtpt9jjf.css"
+        />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
