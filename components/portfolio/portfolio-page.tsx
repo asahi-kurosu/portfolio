@@ -93,15 +93,15 @@ const works = [
     title: "MyKitchen - レシピ管理 Web アプリ",
     body: (
       <>
-        <span className="sm:whitespace-nowrap">
+        <span className="whitespace-nowrap">
           Next.js + TypeScript + Prisma で作る
         </span>
         <br />
-        <span className="sm:whitespace-nowrap">
+        <span className="whitespace-nowrap">
           個人利用向けレシピ管理 Web アプリ。
         </span>
         <br />
-        <span className="sm:whitespace-nowrap">
+        <span className="whitespace-nowrap">
           買い物リスト・画像アップロード・E2E テストまで実装。
         </span>
         <br />
@@ -233,7 +233,7 @@ function SectionTitle({
 }) {
   return (
     <div className="mb-5">
-      <h2 className={`font-display text-[30px] font-black leading-none sm:text-[34px] ${color}`}>
+      <h2 className={`font-display text-[34px] font-black leading-none ${color}`}>
         {children}
       </h2>
       <div className={`mt-3 h-[5px] w-[86px] rounded-full ${underlineColor}`} />
@@ -243,21 +243,17 @@ function SectionTitle({
 
 function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="flex items-center gap-2 sm:gap-4">
+    <div className="flex items-center gap-4">
       <Image
         src={asset("logo.png")}
         alt=""
         width={compact ? 82 : 132}
         height={compact ? 44 : 70}
-        className={
-          compact
-            ? "h-auto w-[74px]"
-            : "h-auto w-[92px] sm:w-[132px]"
-        }
+        className={compact ? "h-auto w-[74px]" : "h-auto w-[132px]"}
         priority={!compact}
       />
       {!compact && (
-        <p className="font-display text-[17px] font-black leading-[1.05] text-[#4c8ec5] sm:text-[22px]">
+        <p className="font-display text-[22px] font-black leading-[1.05] text-[#4c8ec5]">
           ASAHI
           <br />
           KUROSU
@@ -269,8 +265,8 @@ function Logo({ compact = false }: { compact?: boolean }) {
 
 function Header() {
   return (
-    <header className="h-[118px] w-full bg-[#bbe2f6] sm:h-[90px]">
-      <div className="mx-auto flex h-[76px] w-full max-w-[1024px] items-center justify-between px-4 sm:h-full sm:px-8">
+    <header className="h-[90px] w-full bg-[#bbe2f6]">
+      <div className="mx-auto flex h-full w-full max-w-[1024px] items-center justify-between px-8">
         <Logo />
         <nav className="hidden items-center gap-7 font-display text-[19px] font-black text-[#4c8ec5] md:flex">
           {navItems.map((item) => (
@@ -280,26 +276,19 @@ function Header() {
           ))}
         </nav>
       </div>
-      <nav className="mx-4 grid grid-cols-5 border-t border-white/60 pt-3 text-center font-display text-[12px] font-black text-[#4c8ec5] sm:hidden">
-        {navItems.map((item) => (
-          <a key={item} href={`#${item.toLowerCase()}`}>
-            {item}
-          </a>
-        ))}
-      </nav>
     </header>
   );
 }
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[530px] overflow-hidden px-4 pt-4 sm:min-h-[650px] sm:px-8 sm:pt-8">
-      <div className="absolute left-[14px] top-[24px] z-20 h-[116px] w-[calc(100%-28px)] rotate-[-2.5deg] sm:left-[46px] sm:top-[48px] sm:h-[168px] sm:w-[610px] sm:rotate-[-4.18deg]">
+    <section className="relative min-h-[650px] overflow-hidden px-8 pt-8">
+      <div className="absolute left-[46px] top-[48px] z-20 h-[168px] w-[610px] rotate-[-4.18deg]">
         <Image
           src={asset("hero-speech-figma.svg")}
           alt=""
           fill
-          sizes="(max-width: 639px) 100vw, 610px"
+          sizes="610px"
           className="object-fill"
         />
         <Image
@@ -307,36 +296,36 @@ function HeroSection() {
           alt=""
           width={51}
           height={84}
-          className="absolute bottom-[-16px] right-[18px] h-[44px] w-[27px] rotate-[123deg] sm:bottom-[-21px] sm:right-[27px] sm:h-[60px] sm:w-[36px]"
+          className="absolute bottom-[-21px] right-[27px] h-[60px] w-[36px] rotate-[123deg]"
         />
-        <div className="absolute inset-0 z-[1] flex items-center justify-center px-5 pb-1 sm:px-10">
+        <div className="absolute inset-0 z-[1] flex items-center justify-center px-10 pb-1">
           <p className="w-fit text-left font-display font-black leading-[1.2] text-[#db8a9d]">
-            <span className="marker-line inline-block whitespace-nowrap text-[19px] sm:text-[34px]">
+            <span className="marker-line inline-block whitespace-nowrap text-[34px]">
               デザイン感覚
-              <span className="text-[16px] sm:text-[28px]"> × </span>
+              <span className="text-[28px]"> × </span>
               AI ネイティブ
-              <span className="text-[16px] sm:text-[28px]">で、</span>
+              <span className="text-[28px]">で、</span>
             </span>
-            <span className="block whitespace-nowrap text-[19px] sm:text-[34px]">
+            <span className="block whitespace-nowrap text-[34px]">
               現代的
-              <span className="text-[16px] sm:text-[28px]">な</span>
+              <span className="text-[28px]">な</span>
               フロント開発
-              <span className="text-[16px] sm:text-[28px]">に</span>
+              <span className="text-[28px]">に</span>
               挑む
             </span>
           </p>
         </div>
       </div>
 
-      <div className="absolute left-[27px] top-[139px] z-30 flex h-[70px] w-[315px] rotate-[-3deg] items-center px-5 text-white sm:left-[70px] sm:top-[188px] sm:h-[92px] sm:w-[448px] sm:rotate-[-4.48deg] sm:px-[30px]">
+      <div className="absolute left-[70px] top-[188px] z-30 flex h-[92px] w-[448px] rotate-[-4.48deg] items-center px-[30px] text-white">
         <Image
           src={asset("hero-blue-label-figma.svg")}
           alt=""
           fill
-          sizes="(max-width: 639px) 315px, 448px"
+          sizes="448px"
           className="object-fill"
         />
-        <p className="relative z-[1] mx-auto w-fit text-left font-display text-[16px] font-black leading-[1.25] sm:text-[23px]">
+        <p className="relative z-[1] mx-auto w-fit text-left font-display text-[23px] font-black leading-[1.25]">
           <span className="whitespace-nowrap">
             フロントエンドエンジニア志望！
           </span>
@@ -345,12 +334,12 @@ function HeroSection() {
         </p>
       </div>
 
-      <div className="absolute bottom-[-2px] right-[-116px] z-10 h-[390px] w-[565px] sm:bottom-0 sm:right-[20px] sm:h-[630px] sm:w-[910px]">
+      <div className="absolute bottom-0 right-[20px] z-10 h-[630px] w-[910px]">
         <Image
           src={asset("hero-cropped.png")}
           alt="スケートボードに乗る人物と犬のイラスト"
           fill
-          sizes="(max-width: 639px) 565px, 910px"
+          sizes="910px"
           className="object-contain object-center"
           priority
         />
@@ -361,10 +350,10 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section id="about" className="relative px-4 pb-9 sm:px-8">
-      <div className="grid gap-8 md:grid-cols-[1.95fr_1.05fr] md:gap-6">
+    <section id="about" className="relative px-8 pb-9">
+      <div className="grid grid-cols-[1.95fr_1.05fr] gap-6">
         <div className="relative">
-          <div className="relative min-h-[520px] px-7 py-10 sm:min-h-[350px] sm:px-12 sm:py-6">
+          <div className="relative min-h-[350px] px-12 py-6">
             <Image
               src={asset("about-card-figma.svg")}
               alt=""
@@ -372,9 +361,9 @@ function AboutSection() {
               sizes="650px"
               className="object-fill"
             />
-            <div className="relative z-[1] grid min-h-[440px] content-center items-start gap-2 sm:min-h-[302px] sm:grid-cols-[170px_1fr] sm:gap-5">
+            <div className="relative z-[1] grid min-h-[302px] grid-cols-[170px_1fr] content-center items-start gap-5">
               <div className="flex flex-col items-start">
-                <div className="ml-2 sm:ml-4">
+                <div className="ml-4">
                   <SectionTitle underlineColor="bg-[#db8a9d]">About</SectionTitle>
                 </div>
                 <Image
@@ -382,10 +371,10 @@ function AboutSection() {
                   alt=""
                   width={220}
                   height={120}
-                  className="absolute right-1 top-[-12px] w-[120px] object-contain sm:static sm:-mt-[66px] sm:w-[175px]"
+                  className="-mt-[66px] w-[175px] object-contain"
                 />
               </div>
-              <p className="pt-0.5 text-[12px] font-black leading-[1.7] text-[#603d23] sm:whitespace-nowrap sm:text-[13px] sm:leading-[1.55]">
+              <p className="whitespace-nowrap pt-0.5 text-[13px] font-black leading-[1.55] text-[#603d23]">
                 AIマーケティング会社の inglow に新卒入社し、
                 <br />
                 セールスチームやYouTube グロースチームを経て、
@@ -415,12 +404,12 @@ function AboutSection() {
             alt=""
             width={432}
             height={398}
-            className="absolute left-[42px] top-0 z-[2] h-auto w-[44px] rotate-[277deg] sm:left-[72px] sm:w-[51px]"
+            className="absolute left-[72px] top-0 z-[2] h-auto w-[51px] rotate-[277deg]"
           />
         </div>
 
         <div className="relative mt-4 self-start">
-          <div className="relative min-h-[290px] px-5 pb-8 pt-[82px] sm:px-6">
+          <div className="relative min-h-[290px] px-6 pb-8 pt-[82px]">
             <Image
               src={asset("strength-card-figma.svg")}
               alt=""
@@ -469,13 +458,13 @@ function AboutSection() {
 
 function FeatureCardsSection() {
   return (
-    <section className="relative px-4 pb-16 pt-5 sm:px-0">
-      <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+    <section className="relative px-0 pb-16 pt-5">
+      <div className="grid grid-cols-3 gap-6">
         {features.map((feature, index) => (
           <article
             key={feature.title}
-            className={`relative mx-auto h-[305px] w-full max-w-[360px] px-8 pt-[66px] md:max-w-none ${
-              index === 1 ? "md:translate-y-[-4px]" : ""
+            className={`relative h-[305px] px-8 pt-[66px] ${
+              index === 1 ? "translate-y-[-4px]" : ""
             }`}
           >
             <Image
@@ -561,7 +550,7 @@ function FeatureCardsSection() {
 
 function WorksSection() {
   return (
-    <section id="works" className="relative isolate px-4 pb-16 pt-12 sm:px-8">
+    <section id="works" className="relative isolate px-8 pb-16 pt-12">
       <svg
         aria-hidden="true"
         className="absolute inset-x-[-70px] bottom-0 top-[-22px] z-0 h-[calc(100%+22px)] w-[calc(100%+140px)] overflow-hidden"
@@ -582,9 +571,9 @@ function WorksSection() {
         {works.map((work, index) => (
           <article
             key={work.title}
-            className={`relative min-h-[520px] rounded-[30px] border-[5px] border-white p-3 pb-14 sm:h-[520px] sm:pb-12 ${
+            className={`relative h-[520px] rounded-[30px] border-[5px] border-white p-3 pb-12 ${
               work.variant === "cream" ? "bg-[#fff4d5]" : "bg-[#bbe2f6]"
-            } ${index === 0 ? "rotate-[-1deg] sm:rotate-[-2.4deg]" : "rotate-[1deg] sm:rotate-[3.6deg]"}`}
+            } ${index === 0 ? "rotate-[-2.4deg]" : "rotate-[3.6deg]"}`}
           >
             <span
               className={`absolute z-[2] h-[46px] w-[118px] overflow-hidden ${
@@ -601,7 +590,7 @@ function WorksSection() {
                 className="absolute left-[-10%] top-0 h-full w-[122%] max-w-none"
               />
             </span>
-            <div className="relative h-[220px] w-full overflow-hidden rounded-[22px] border-[4px] border-white sm:h-[282px]">
+            <div className="relative h-[282px] w-full overflow-hidden rounded-[22px] border-[4px] border-white">
               <Image
                 src={asset(work.image)}
                 alt=""
@@ -627,7 +616,7 @@ function WorksSection() {
             >
               {work.body}
             </p>
-            <div className="mt-3 flex flex-wrap items-center gap-1.5 sm:flex-nowrap">
+            <div className="mt-3 flex flex-nowrap items-center gap-1.5">
               {work.tags.map((tag) => (
                 <span
                   key={tag}
@@ -652,8 +641,8 @@ function WorksSection() {
               href="#contact"
               className={`absolute rounded-[10px] px-5 py-2 font-display text-[18px] font-black ${
                 index === 0
-                  ? "bottom-[-13px] right-[28px] rotate-[-6deg] sm:right-[76px] sm:rotate-[-10deg]"
-                  : "bottom-[-17px] right-[28px] rotate-[7deg] sm:right-[268px] sm:rotate-[12deg]"
+                  ? "bottom-[-13px] right-[76px] rotate-[-10deg]"
+                  : "bottom-[-17px] right-[268px] rotate-[12deg]"
               } ${work.viewMoreColor}`}
             >
               view more→
@@ -667,8 +656,8 @@ function WorksSection() {
 
 function SkillsSection() {
   return (
-    <section id="skills" className="relative px-4 pb-12 pt-8 sm:px-8">
-      <div className="relative isolate min-h-[820px] overflow-visible px-5 pb-12 pt-16 sm:px-12 sm:pb-16 sm:pt-20">
+    <section id="skills" className="relative px-8 pb-12 pt-8">
+      <div className="relative isolate min-h-[820px] overflow-visible px-12 pb-16 pt-20">
         <Image
           aria-hidden="true"
           src={asset("skills-bg-figma.svg")}
@@ -691,26 +680,26 @@ function SkillsSection() {
           alt=""
           width={433}
           height={569}
-          className="absolute right-[4px] top-[-42px] z-[3] w-[105px] object-contain sm:right-[20px] sm:top-[-78px] sm:w-[180px]"
+          className="absolute right-[20px] top-[-78px] z-[3] w-[180px] object-contain"
         />
 
         <SectionTitle underlineColor="bg-[#db8a9d]">Skills</SectionTitle>
-        <p className="mb-6 max-w-[240px] text-[12px] font-black leading-relaxed text-[#603d23] sm:mb-8 sm:max-w-none sm:text-[16px]">
+        <p className="mb-8 text-[16px] font-black leading-relaxed text-[#603d23]">
           ※ 学習プログラム配下のプロジェクト（MyKitchen / もぐもぐパン HP）で使用した技術スタックです。
         </p>
 
-        <div className="mb-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+        <div className="mb-8 grid gap-4 md:grid-cols-4">
           {skillGroups.map((group) => (
             <article
               key={group.title}
-              className="min-h-[190px] rounded-[24px] border-[3px] border-[#d4d4d4] bg-white px-3 py-4 sm:min-h-[205px] sm:rounded-[30px] sm:px-5 sm:py-5"
+              className="min-h-[205px] rounded-[30px] border-[3px] border-[#d4d4d4] bg-white px-5 py-5"
             >
               <h3
-                className={`${group.badgeColor} mb-4 inline-flex min-w-[104px] justify-center rounded-full px-3 py-2 font-display text-[14px] font-black text-white sm:min-w-[112px] sm:px-5 sm:text-[18px]`}
+                className={`${group.badgeColor} mb-4 inline-flex min-w-[112px] justify-center rounded-full px-5 py-2 font-display text-[18px] font-black text-white`}
               >
                 {group.title}
               </h3>
-              <ul className="space-y-3 text-[13px] font-black leading-tight text-[#603d23] sm:text-[16px]">
+              <ul className="space-y-3 text-[16px] font-black leading-tight text-[#603d23]">
                 {group.items.map((item) => (
                   <li key={item}>・{item}</li>
                 ))}
@@ -719,7 +708,7 @@ function SkillsSection() {
           ))}
         </div>
 
-        <div className="rounded-[28px] border-[3px] border-[#db8a9d] bg-[#f9edf1] px-4 py-6 sm:px-7 sm:py-7">
+        <div className="rounded-[28px] border-[3px] border-[#db8a9d] bg-[#f9edf1] px-7 py-7">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <h3 className="mb-5 font-display text-[24px] font-black text-[#db8a9d]">
@@ -737,7 +726,7 @@ function SkillsSection() {
                 <p>・Claude Code — 過去プロジェクトで使用経験あり</p>
                 <p>→ どちらのツールを使う現場でも対応可能</p>
               </div>
-              <div className="mt-5 inline-flex rounded-[14px] border-[2px] border-[#db8a9d] bg-white px-4 py-3 text-[11px] font-black leading-snug text-[#603d23] sm:px-5 sm:text-[12px]">
+              <div className="mt-5 inline-flex rounded-[14px] border-[2px] border-[#db8a9d] bg-white px-5 py-3 text-[12px] font-black leading-snug text-[#603d23]">
                 補助で使うもの: ChatGPT / 公式ドキュメント / メンターへの質問 /
                 <br />
               </div>
@@ -770,7 +759,7 @@ function SkillsSection() {
                 <br />
                 （イラスト経験で培った UI/UX 感覚を活用）
               </p>
-              <div className="relative inline-flex rounded-[14px] border-[2px] border-[#db8a9d] bg-white px-4 py-4 text-[11px] font-black leading-snug text-[#603d23] sm:px-6 sm:text-[12px]">
+              <div className="relative inline-flex rounded-[14px] border-[2px] border-[#db8a9d] bg-white px-6 py-4 text-[12px] font-black leading-snug text-[#603d23]">
                 例: Splide の余白がおかしい / スマホだけ崩れる /
                 <br />
                 ハンバーガーの×がズレる / header 幅がおかしい /
@@ -796,7 +785,7 @@ function SkillsSection() {
 
 function CareerSection() {
   return (
-    <section id="career" className="relative isolate px-4 pb-16 pt-16 sm:px-8">
+    <section id="career" className="relative isolate px-8 pb-16 pt-16">
       <svg
         aria-hidden="true"
         className="absolute inset-x-[-34px] bottom-[-6px] top-0 -z-10 h-full w-[calc(100%+68px)]"
@@ -809,12 +798,12 @@ function CareerSection() {
         />
       </svg>
 
-      <div className="relative z-[1] px-0 sm:px-6">
+      <div className="relative z-[1] px-6">
         <SectionTitle color="text-[#4c8ec5]" underlineColor="bg-[#4c8ec5]">
           Career
         </SectionTitle>
 
-        <div className="mb-7 space-y-1 text-[13px] font-black leading-relaxed text-[#866452] sm:text-[16px]">
+        <div className="mb-7 space-y-1 text-[16px] font-black leading-relaxed text-[#866452]">
           <p className="text-[#4c8ec5]">株式会社 inglow</p>
           <p>2023年4月 〜 2024年3月（新卒で計１年）</p>
           <p>2023/4 セールスチーム配属 → 2023/10 YouTube グロースチーム異動</p>
@@ -914,7 +903,7 @@ function CareerSection() {
             alt=""
             width={427}
             height={534}
-            className="absolute bottom-[-54px] right-[120px] hidden w-[230px] object-contain md:block"
+            className="absolute bottom-[-54px] right-[120px] w-[230px] object-contain"
           />
         </article>
       </div>
@@ -986,8 +975,8 @@ function MetricBox({
 
 function ContactSection() {
   return (
-    <section id="contact" className="px-4 py-10 sm:px-8">
-      <div className="blob-wide grid gap-6 bg-white px-6 py-8 sm:px-10 sm:py-9 md:grid-cols-[1fr_260px]">
+    <section id="contact" className="px-8 py-10">
+      <div className="blob-wide grid gap-6 bg-white px-10 py-9 md:grid-cols-[1fr_260px]">
         <div>
           <SectionTitle>Contact</SectionTitle>
           <div className="space-y-3">
@@ -1018,10 +1007,10 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="px-4 pb-10 pt-3 sm:px-8">
-      <div className="flex flex-col items-center gap-5 border-t-[3px] border-white pt-5 text-white sm:flex-row sm:justify-between sm:gap-0">
+    <footer className="px-8 pb-10 pt-3">
+      <div className="flex items-center justify-between border-t-[3px] border-white pt-5 text-white">
         <Logo compact />
-        <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 font-display text-xs font-black">
+        <nav className="flex gap-4 font-display text-xs font-black">
           {["Top", ...navItems].map((item) => (
             <a key={item} href={item === "Top" ? "#" : `#${item.toLowerCase()}`}>
               {item}
@@ -1036,7 +1025,7 @@ function Footer() {
 
 export function PortfolioPage() {
   return (
-    <main className="min-h-screen w-full overflow-x-clip bg-[#f1b1c0] text-[#603d23]">
+    <main className="min-h-screen w-screen bg-[#f1b1c0] text-[#603d23]">
       <OrganicShapeDefs />
       <Header />
       <div className="mx-auto min-h-screen w-full max-w-[1024px] overflow-hidden">
