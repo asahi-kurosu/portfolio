@@ -26,11 +26,16 @@ body {
 #desktop-baseline {
   display: block;
   width: 100%;
-  height: 5204px;
+  height: 100dvh;
   border: 0;
+  vertical-align: top;
 }
 
 #legacy-home {
+  display: none;
+}
+
+#mobile-portfolio {
   display: none;
 }
 
@@ -190,20 +195,31 @@ a {
   background: #e5b6c5;
 }
 
-.bottom-wave {
-  background: #bbe2f6;
-  border-radius: 52% 48% 0 0 / 38% 44% 0 0;
-  bottom: -38px;
-  height: 86px;
-  left: -36px;
-  position: absolute;
-  right: -36px;
-  z-index: 0;
-}
-
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   #desktop-baseline {
     display: none;
+  }
+
+  #mobile-portfolio {
+    display: block;
+  }
+
+  #mobile-portfolio,
+  #mobile-portfolio * {
+    cursor: none !important;
+  }
+
+  .work-detail,
+  .work-detail main,
+  .work-detail article {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .work-detail img {
+    height: auto;
+    max-width: 100%;
   }
 
   #legacy-home {
@@ -241,9 +257,9 @@ a {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 0;
-    height: 40px;
-    margin: -40px 16px 0;
-    padding-top: 10px;
+    height: 42px;
+    margin: 0 16px;
+    padding-top: 12px;
     border-top: 1px solid rgb(255 255 255 / 60%);
     position: relative;
     z-index: 40;
@@ -304,10 +320,10 @@ a {
   }
 
   #legacy-home section:first-of-type > div:nth-of-type(3) {
-    right: -116px;
+    right: 5%;
     bottom: -2px;
-    width: 565px;
-    height: 390px;
+    width: 90%;
+    height: 270px;
   }
 
   #legacy-home #about > div,
@@ -379,7 +395,7 @@ a {
     width: 100%;
     max-width: 360px;
     margin-inline: auto;
-    translate: none;
+    translate: 0 0 !important;
   }
 
   #legacy-home #works,
@@ -403,6 +419,22 @@ a {
     flex-wrap: wrap;
   }
 
+  #legacy-home #works .whitespace-nowrap {
+    white-space: normal;
+  }
+
+  #legacy-home #works article > a[class*="absolute"] {
+    left: auto;
+    right: 16px;
+  }
+
+  #legacy-home #works > img[class*="w-[122vw]"] {
+    left: 0;
+    width: 100%;
+    transform: none;
+    translate: 0 0 !important;
+  }
+
   #legacy-home #skills > div {
     min-height: 0;
     padding: 64px 20px 48px;
@@ -417,8 +449,39 @@ a {
     padding-inline: 12px;
   }
 
+  #legacy-home #skills > div > img[class*="w-[calc(100%+68px)]"] {
+    left: 0;
+    width: 100%;
+    transform: none;
+    translate: 0 0 !important;
+  }
+
+  #legacy-home #skills .whitespace-nowrap {
+    display: flex;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  #legacy-home #skills > div > img[class*="right-[-28px]"] {
+    right: 0;
+    max-width: min(72vw, 260px);
+  }
+
   #legacy-home #career > div {
     padding-inline: 0;
+    background-image: url("https://portfolio-l2cs3s6so-kurosuasahi-1792s-projects.vercel.app/portfolio-assets/career-bg-figma.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  #legacy-home #career img[class*="w-[calc(100%+68px)]"] {
+    left: 0;
+    width: 100%;
+    transform: none;
+    translate: 0px !important;
   }
 
   #legacy-home #career article {
@@ -428,6 +491,17 @@ a {
   #legacy-home #career article img,
   #legacy-home #contact > div > img {
     display: none;
+  }
+
+  #legacy-home #contact > div > img:first-child {
+    display: none;
+  }
+
+  #legacy-home #contact > div {
+    background-image: url("https://portfolio-l2cs3s6so-kurosuasahi-1792s-projects.vercel.app/portfolio-assets/contact-bg-figma.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 
   #legacy-home #contact a {
