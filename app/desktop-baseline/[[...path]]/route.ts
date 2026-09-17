@@ -11,6 +11,17 @@ function prepareDesktopHtml(html: string) {
 
   const navigationBridge = `
     <base href="${DESKTOP_ORIGIN}/">
+    <style>
+      html, body, body * { cursor: auto !important; }
+      a, button, [role="button"], input, select, textarea, summary {
+        cursor: pointer !important;
+      }
+      :where(a, button, input, select, textarea, summary):focus-visible {
+        border-radius: 6px;
+        outline: 3px solid #2e6ea6 !important;
+        outline-offset: 4px;
+      }
+    </style>
     <script>
       document.addEventListener("click", function (event) {
         var target = event.target;

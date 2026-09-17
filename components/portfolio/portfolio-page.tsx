@@ -160,12 +160,6 @@ const skillGroups = [
   },
 ];
 
-const careerCards = [
-  { label: "個人アポ率", before: "19.8%", after: "40.7%" },
-  { label: "チームアポ率", before: "17.3%", after: "32.3%" },
-  { label: "改善の仕組み化", before: "OJT", after: "Manual" },
-];
-
 const contactLinks = [
   ["Live Demo", "https://app-my-recipe.vercel.app/"],
   ["公開リポジトリ", "https://github.com/ohiromeya-web-hands-on/app_my-recipe"],
@@ -312,7 +306,7 @@ function HeroSection() {
           className="absolute bottom-[-21px] right-[15px] h-[76px] w-[38px] rotate-[177deg] sm:bottom-[-21px] sm:right-[27px] sm:h-[60px] sm:w-[36px] sm:rotate-[123deg]"
         />
         <div className="absolute inset-0 z-[1] flex items-center justify-center px-5 pb-1 sm:px-10">
-          <p className="w-fit text-left font-display font-black leading-[1.2] text-[#db8a9d]">
+          <h1 className="w-fit text-left font-display font-black leading-[1.2] text-[#db8a9d]">
             <span className="marker-line inline-block whitespace-nowrap text-[17px] min-[400px]:text-[18px] sm:text-[34px]">
               デザイン感覚
               <span className="text-[15px] sm:text-[28px]"> × </span>
@@ -326,7 +320,7 @@ function HeroSection() {
               <span className="text-[15px] sm:text-[28px]">に</span>
               挑む
             </span>
-          </p>
+          </h1>
         </div>
       </div>
 
@@ -968,29 +962,6 @@ function CareerList({ items }: { items: string[] }) {
         </li>
       ))}
     </ol>
-  );
-}
-
-function MetricBox({
-  label,
-  value,
-  emphasize = false,
-}: {
-  label: string;
-  value: string;
-  emphasize?: boolean;
-}) {
-  return (
-    <div className="min-w-0 flex-1 rounded-[14px] bg-[#d4d4d4]/60 px-3 py-4 text-center">
-      <p className="text-xs font-black text-[#866452]">{label}</p>
-      <p
-        className={`font-display text-[20px] font-black ${
-          emphasize ? "text-[#db8a9d]" : "text-[#f1b1c0]"
-        }`}
-      >
-        {value}
-      </p>
-    </div>
   );
 }
 
