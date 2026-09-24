@@ -653,7 +653,7 @@ function WorksSection() {
               className={`absolute rounded-[10px] px-5 py-2 font-display text-[18px] font-black ${
                 index === 0
                   ? "bottom-[-13px] right-[28px] rotate-[-6deg] sm:right-[76px] sm:rotate-[-10deg]"
-                  : "bottom-[-17px] right-[28px] rotate-[7deg] sm:right-[268px] sm:rotate-[12deg]"
+                  : "bottom-[-17px] right-[28px] rotate-[7deg] sm:right-[76px] sm:rotate-[12deg]"
               } ${work.viewMoreColor}`}
             >
               view more→
