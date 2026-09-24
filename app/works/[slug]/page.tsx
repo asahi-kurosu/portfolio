@@ -74,16 +74,5 @@ export default async function WorkPage({
   const { slug } = await params;
   if (!slugs.has(slug as WorkSlug)) notFound();
 
-  return (
-    <>
-      <iframe
-        id="desktop-baseline"
-        src={`/desktop-baseline/works/${slug}`}
-        title={`${slug} 制作実績`}
-      />
-      <div id="mobile-portfolio">
-        <WorkDetailPage slug={slug as WorkSlug} />
-      </div>
-    </>
-  );
+  return <WorkDetailPage slug={slug as WorkSlug} />;
 }

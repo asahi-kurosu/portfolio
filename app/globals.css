@@ -23,20 +23,8 @@ body {
   display: none;
 }
 
-#desktop-baseline {
-  display: block;
-  width: 100%;
-  height: 100dvh;
-  border: 0;
-  vertical-align: top;
-}
-
 #legacy-home {
-  display: none;
-}
-
-#mobile-portfolio {
-  display: none;
+  display: block;
 }
 
 html {
@@ -202,14 +190,6 @@ a {
 }
 
 @media (max-width: 1023px) {
-  #desktop-baseline {
-    display: none;
-  }
-
-  #mobile-portfolio {
-    display: block;
-  }
-
   .work-detail,
   .work-detail main,
   .work-detail article {
@@ -221,10 +201,6 @@ a {
   .work-detail img {
     height: auto;
     max-width: 100%;
-  }
-
-  #legacy-home {
-    display: block;
   }
 
   html,
