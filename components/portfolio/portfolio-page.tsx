@@ -559,7 +559,7 @@ function WorksSection() {
     <section id="works" className="relative isolate px-4 pb-16 pt-12 sm:px-8">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-[-70px] bottom-0 top-[-22px] z-0"
+        className="pointer-events-none absolute inset-x-[-70px] bottom-0 top-[-22px] z-0 sm:left-1/2 sm:right-auto sm:w-screen sm:-translate-x-1/2"
       >
         <Image
           src={asset("works-bg-figma-latest.png")}
@@ -653,7 +653,7 @@ function WorksSection() {
               className={`absolute rounded-[10px] px-5 py-2 font-display text-[18px] font-black ${
                 index === 0
                   ? "bottom-[-13px] right-[28px] rotate-[-6deg] sm:right-[76px] sm:rotate-[-10deg]"
-                  : "bottom-[-17px] right-[28px] rotate-[7deg] sm:right-[76px] sm:rotate-[12deg]"
+                  : "bottom-[-17px] right-[28px] rotate-[7deg] sm:right-[210px] sm:rotate-[12deg]"
               } ${work.viewMoreColor}`}
             >
               view more→
@@ -1029,7 +1029,7 @@ export function PortfolioPage() {
     <main id="legacy-home" className="min-h-screen w-full overflow-x-clip bg-[#f1b1c0] text-[#603d23]">
       <OrganicShapeDefs />
       <Header />
-      <div className="mx-auto min-h-screen w-full max-w-[1024px] overflow-hidden">
+      <div className="mx-auto min-h-screen w-full max-w-[1024px] overflow-hidden sm:overflow-visible">
         <HeroSection />
         <AboutSection />
         <FeatureCardsSection />
