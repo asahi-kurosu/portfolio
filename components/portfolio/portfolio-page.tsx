@@ -566,7 +566,7 @@ function WorksSection() {
           alt=""
           fill
           sizes="1024px"
-          className="object-cover"
+          className="object-fill"
         />
       </div>
       <div className="relative z-[1]">
