@@ -106,10 +106,9 @@ function Mogumogu() {
         <Image src={figma("mogumogu","9")} alt="もぐもぐパンのスマートフォン表示" width={1312} height={2656} priority className="absolute left-1/2 top-0 h-auto w-[166px] -translate-x-1/2 rotate-[6deg]" />
         <Image src={figma("mogumogu","17")} alt="犬と座る女の子のイラスト" width={1080} height={1350} loading="eager" className="pointer-events-none absolute -bottom-1 right-[-12px] h-auto w-[126px]" />
       </div>
-      <div className="mx-auto mt-2 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl border-2 border-[#db8a9d] bg-white px-4 font-black text-[#db8a9d]">
-        <Image src={asset("work-detail/mogumogu/github.svg")} alt="" width={35} height={34} className="h-[22px] w-[23px]" />
-        GitHub Repository
-      </div>
+      <a href="https://mogumogupan-stg.ohiromeya.jp/" aria-label="もぐもぐパンのLive Demoを見る" className="mx-auto mt-2 inline-flex min-h-12 w-full items-center justify-center rounded-2xl bg-[#db8a9d] px-4 font-black text-white">
+        ▶ Live Demo
+      </a>
     </section>
 
     <section className="mt-8 grid gap-5">
