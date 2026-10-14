@@ -448,10 +448,6 @@ a {
 
   #legacy-home #career > div {
     padding-inline: 0;
-    background-image: url("https://portfolio-l2cs3s6so-kurosuasahi-1792s-projects.vercel.app/portfolio-assets/career-bg-figma.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
   }
 
   #legacy-home #career img[class*="w-[calc(100%+68px)]"] {
@@ -475,7 +471,7 @@ a {
   }
 
   #legacy-home #contact > div {
-    background-image: url("https://portfolio-l2cs3s6so-kurosuasahi-1792s-projects.vercel.app/portfolio-assets/contact-bg-figma.png");
+    background-image: url("/portfolio-assets/contact-bg.svg");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -496,7 +492,7 @@ a {
   }
 
   #legacy-home footer nav {
-    gap: 10px 0;
+    gap: 10px 12px;
   }
 
   .organic-panel {

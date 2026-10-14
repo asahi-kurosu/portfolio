@@ -586,7 +586,7 @@ function WorksSection() {
               className={`absolute z-[2] h-[24px] w-[60px] overflow-hidden sm:h-[46px] sm:w-[118px] ${
                 index === 0
                   ? "left-[-24px] top-[-16px] rotate-[-18deg] sm:left-[-48px] sm:top-[-31px]"
-                  : "left-[-6px] top-[-9px] rotate-[-18deg] sm:left-[-12px] sm:top-[-18px]"
+                  : "left-[-6px] top-[-9px] rotate-[-18deg] sm:left-[-12px] sm:top-[-18px] lg:left-[-10px] lg:top-[-39px] lg:rotate-[-25deg]"
               }`}
             >
               <Image
@@ -780,7 +780,7 @@ function SkillsSection() {
                 ハンバーガーの×がズレる / header 幅がおかしい /
                 <br />
                 アライメントが微妙にズレている等。
-                <span className="absolute bottom-[85px] right-[-17px] h-[20px] w-[47px] rotate-[35deg] overflow-hidden">
+                <span className="absolute bottom-[85px] right-[-17px] h-[20px] w-[47px] rotate-[35deg] overflow-hidden lg:bottom-auto lg:right-[-26px] lg:top-[-18px] lg:h-[30px] lg:w-[70px]">
                   <Image
                     src={asset("pet-1.png")}
                     alt=""
@@ -907,7 +907,7 @@ function CareerSection() {
           <h3 className="mb-3 text-[18px] font-black text-[#4c8ec5]">
             自発的取り組み
           </h3>
-          <p className="max-w-[690px] text-[12px] font-black leading-relaxed text-[#603d23]">
+          <p className="max-w-[690px] lg:max-w-[calc(100%-360px)] text-[12px] font-black leading-relaxed text-[#603d23]">
             新入社員のオンボーディング支援を、業務外で自発的に実施。
             <br />
             「自分も新卒の初めの方で同じように助けてもらったから、
@@ -969,10 +969,9 @@ function ContactSection() {
   return (
     <section id="contact" className="px-4 py-10 sm:px-8">
       <div
-        className="relative -mx-4 grid gap-6 px-10 py-16 sm:mx-0 sm:px-10 sm:py-9 md:grid-cols-[1fr_260px]"
+        className="contact-panel relative -mx-4 grid gap-6 px-10 py-16 sm:mx-0 sm:px-10 sm:py-9 md:grid-cols-[1fr_260px] lg:px-16 lg:py-16"
         style={{
-          backgroundImage:
-            'url("https://portfolio-l2cs3s6so-kurosuasahi-1792s-projects.vercel.app/portfolio-assets/contact-bg-figma.png")',
+          backgroundImage: `url("${asset("contact-bg.svg")}")`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",

@@ -1,0 +1,265 @@
+/* PC dimensions are separate so the existing mobile composition stays intact. */
+@media (min-width: 1024px) {
+  .work-detail .detail-body {
+    font-size: 20px;
+  }
+
+  .detail-body > section {
+    margin-top: 64px;
+  }
+
+  .detail-body p,
+  .detail-body ul {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+
+  .detail-body h3 {
+    font-size: 25px;
+    line-height: 1.5;
+  }
+
+  .detail-page-nav {
+    font-size: 18px;
+  }
+
+  .detail-mykitchen-hero > div {
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .detail-mykitchen-hero > div > [aria-hidden="true"] {
+    top: 0;
+    left: -12px;
+  }
+
+  .detail-actions {
+    max-width: 900px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 32px auto 0;
+  }
+
+  .detail-actions a,
+  .detail-mogumogu-hero > a {
+    min-height: 64px;
+    font-size: 22px;
+  }
+
+  .detail-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 28px;
+  }
+
+  .detail-overview .detail-panel {
+    min-width: 0;
+  }
+
+  .detail-tags {
+    gap: 10px;
+  }
+
+  .detail-tags > span {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+
+  .detail-tech-panel {
+    position: relative;
+    padding-bottom: 245px;
+    overflow: visible;
+  }
+
+  .detail-tech-illustration {
+    position: absolute;
+    right: 20px;
+    bottom: -28px;
+    width: 230px;
+    height: auto;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  .detail-story-first {
+    padding-top: 80px;
+  }
+
+  .detail-story-first > .detail-story-illustration {
+    top: -220px;
+    right: -8px;
+    width: 360px;
+    height: auto;
+  }
+
+  .detail-story-first h3 {
+    padding-right: 320px;
+  }
+
+  .detail-pr-card {
+    padding: 32px;
+    border-radius: 40px;
+  }
+
+  .detail-pr-tape {
+    top: -16px;
+    right: -16px;
+    width: 110px;
+    height: 36px;
+  }
+
+  .detail-pr-tape img {
+    left: -12px;
+    width: 154px;
+    height: 36px;
+    max-width: none;
+  }
+
+  .detail-pr-card:has(.detail-pr-illustration) {
+    min-height: 290px;
+    padding-right: 280px;
+  }
+
+  .detail-pr-illustration {
+    right: 24px;
+    bottom: -4px;
+    width: 220px;
+    height: auto;
+  }
+
+  .detail-subshots-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .detail-quality > div:first-of-type {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .detail-quality .detail-panel {
+    padding: 24px 18px;
+  }
+
+  .detail-quality .detail-panel p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .detail-quality .detail-panel > div > p {
+    font-size: 32px;
+  }
+
+  .detail-mogumogu-hero > p {
+    max-width: 660px;
+    margin-top: 28px;
+    font-size: 22px;
+    line-height: 1.8;
+  }
+
+  .detail-phone-stage {
+    max-width: 620px;
+    height: 650px;
+    margin-top: 32px;
+  }
+
+  .detail-phone {
+    width: 300px;
+  }
+
+  .detail-hero-illustration {
+    right: 0;
+    bottom: 8px;
+    width: 230px;
+  }
+
+  .detail-mogumogu-hero > a {
+    display: flex;
+    max-width: 600px;
+    margin-top: 28px;
+  }
+
+  .detail-tech-tape {
+    right: -16px;
+    top: -14px;
+    width: 108px;
+    height: 36px;
+  }
+
+  .detail-tech-tape img,
+  .detail-subshots-tape img {
+    left: -18px;
+    top: -3px;
+    width: 145px;
+    height: 43px;
+    max-width: none;
+  }
+
+  .detail-mogumogu-story {
+    min-height: 300px;
+    padding-right: 290px;
+    padding-bottom: 32px;
+  }
+
+  .detail-mogumogu-story > .detail-story-illustration {
+    right: 20px;
+    bottom: -8px;
+    width: 230px;
+  }
+
+  .detail-subshots-tape {
+    left: -14px;
+    top: 62px;
+    width: 112px;
+    height: 36px;
+  }
+
+  .detail-subshots-panel {
+    padding: 64px 32px 32px;
+  }
+
+  .detail-phones-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .detail-subshots-illustration {
+    width: 230px;
+  }
+
+  .detail-footer p {
+    font-size: 12px;
+  }
+
+  .detail-footer nav {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .work-detail .detail-header {
+    height: 118px;
+  }
+
+  .work-detail .detail-header > div {
+    height: 76px;
+    padding-inline: 18px;
+  }
+
+  .work-detail .detail-header > div > nav {
+    display: none;
+  }
+
+  .work-detail .detail-mobile-nav {
+    display: grid;
+    height: 42px;
+  }
+
+  .work-detail .detail-header img {
+    width: 92px;
+  }
+
+  .work-detail .detail-header span {
+    font-size: 17px;
+  }
+}
