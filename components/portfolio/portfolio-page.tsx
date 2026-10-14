@@ -133,7 +133,7 @@ const works = [
     variant: "cream",
     viewMoreColor: "bg-[#603d23] text-[#fff067]",
     detailHref: "/works/mogumogu",
-    links: [["🌐 Live", "https://mogumogupan-stg.ohiromeya.jp/"]],
+    links: [],
   },
 ];
 
