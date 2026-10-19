@@ -574,7 +574,7 @@ function WorksSection() {
           Works
         </SectionTitle>
       </div>
-      <div className="relative z-[1] grid items-start gap-5 md:grid-cols-2">
+      <div className="relative z-[1] grid items-start gap-5 md:grid-cols-2 lg:mt-1">
         {works.map((work, index) => (
           <article
             key={work.title}
@@ -583,10 +583,10 @@ function WorksSection() {
             } ${index === 0 ? "rotate-[-1deg] sm:rotate-[-2.4deg]" : "rotate-[1deg] sm:rotate-[3.6deg]"}`}
           >
             <span
-              className={`absolute z-[2] h-[24px] w-[60px] overflow-hidden sm:h-[46px] sm:w-[118px] ${
+              className={`absolute z-[2] h-[24px] w-[60px] overflow-hidden sm:h-[46px] sm:w-[118px] lg:h-[37px] lg:w-[95px] ${
                 index === 0
-                  ? "left-[-24px] top-[-16px] rotate-[-18deg] sm:left-[-48px] sm:top-[-31px] lg:top-[-23px]"
-                  : "left-[-6px] top-[-9px] rotate-[-18deg] sm:left-[-12px] sm:top-[-18px] lg:left-[-26px] lg:top-[-16px] lg:rotate-[-25deg]"
+                  ? "left-[-24px] top-[-16px] rotate-[-18deg] sm:left-[-48px] sm:top-[-31px] lg:left-[-37px] lg:top-[-19px]"
+                  : "left-[-6px] top-[-9px] rotate-[-18deg] sm:left-[-12px] sm:top-[-18px] lg:left-[-15px] lg:top-[-12px] lg:rotate-[-25deg]"
               }`}
             >
               <Image
