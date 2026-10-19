@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SiteFooter } from "./site-footer";
 
 const navItems = ["About", "Works", "Skills", "Career", "Contact"];
 
@@ -237,28 +238,22 @@ function SectionTitle({
   );
 }
 
-function Logo({ compact = false }: { compact?: boolean }) {
+function Logo() {
   return (
     <div className="flex items-center gap-2 sm:gap-4">
       <Image
         src={asset("logo.png")}
         alt=""
-        width={compact ? 82 : 132}
-        height={compact ? 44 : 70}
-        className={
-          compact
-            ? "h-auto w-[74px]"
-            : "h-auto w-[92px] sm:w-[132px]"
-        }
-        priority={!compact}
+        width={132}
+        height={70}
+        className="h-auto w-[92px] sm:w-[132px]"
+        priority
       />
-      {!compact && (
-        <p className="font-display text-[17px] font-black leading-[1.05] text-[#4c8ec5] sm:text-[22px]">
-          ASAHI
-          <br />
-          KUROSU
-        </p>
-      )}
+      <p className="font-display text-[17px] font-black leading-[1.05] text-[#4c8ec5] sm:text-[22px]">
+        ASAHI
+        <br />
+        KUROSU
+      </p>
     </div>
   );
 }
@@ -561,20 +556,25 @@ function WorksSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-[-70px] bottom-0 top-[-22px] z-0 sm:left-1/2 sm:right-auto sm:w-screen sm:-translate-x-1/2"
       >
-        <Image
-          src={asset("works-bg-figma-latest.png")}
-          alt=""
-          fill
-          sizes="1024px"
-          className="object-fill"
-        />
+        {/* Figma "Works/background" vector, cropped to the visible frame. Kept as SVG so the
+            edges stay crisp when mobile stretches it; the bottom polyline is eased into curves. */}
+        <svg
+          className="absolute inset-0 h-full w-full"
+          preserveAspectRatio="none"
+          viewBox="236 0 1426 898"
+        >
+          <path
+            d="M222.222 10.9544C722.222 -50.0473 1277.22 169.453 1690.22 41.9532C2103.22 -85.5464 1662.22 897.954 1662.22 897.954H1307.72C1123.72 897.954 1031.72 873.453 939.722 873.453C760.322 873.453 401.622 897.954 222.222 897.954C222.222 897.954 -277.778 71.9562 222.222 10.9544Z"
+            fill="#BBE2F6"
+          />
+        </svg>
       </div>
       <div className="relative z-[1]">
         <SectionTitle color="text-[#4c8ec5]" underlineColor="bg-[#4c8ec5]">
           Works
         </SectionTitle>
       </div>
-      <div className="relative z-[1] grid items-start gap-5 md:grid-cols-2">
+      <div className="relative z-[1] grid items-start gap-5 md:grid-cols-2 lg:mt-1">
         {works.map((work, index) => (
           <article
             key={work.title}
@@ -583,10 +583,10 @@ function WorksSection() {
             } ${index === 0 ? "rotate-[-1deg] sm:rotate-[-2.4deg]" : "rotate-[1deg] sm:rotate-[3.6deg]"}`}
           >
             <span
-              className={`absolute z-[2] h-[24px] w-[60px] overflow-hidden sm:h-[46px] sm:w-[118px] ${
+              className={`absolute z-[2] h-[24px] w-[60px] overflow-hidden sm:h-[46px] sm:w-[118px] lg:h-[37px] lg:w-[95px] ${
                 index === 0
-                  ? "left-[-24px] top-[-16px] rotate-[-18deg] sm:left-[-48px] sm:top-[-31px]"
-                  : "left-[-6px] top-[-9px] rotate-[-18deg] sm:left-[-12px] sm:top-[-18px] lg:left-[-10px] lg:top-[-39px] lg:rotate-[-25deg]"
+                  ? "left-[-24px] top-[-16px] rotate-[-18deg] sm:left-[-48px] sm:top-[-31px] lg:left-[-37px] lg:top-[-19px]"
+                  : "left-[-6px] top-[-9px] rotate-[-18deg] sm:left-[-12px] sm:top-[-18px] lg:left-[-15px] lg:top-[-12px] lg:rotate-[-25deg]"
               }`}
             >
               <Image
@@ -681,7 +681,7 @@ function SkillsSection() {
             className="object-fill"
           />
         </div>
-        <span className="absolute left-[-26px] top-[-28px] z-[2] h-[40px] w-[112px] rotate-[-15deg] overflow-hidden sm:left-[54px]">
+        <span className="absolute left-[-26px] top-[-28px] z-[2] h-[40px] w-[112px] rotate-[-15deg] overflow-hidden sm:left-[54px] lg:left-[41px] lg:top-[-4px]">
           <Image
             src={asset("tape-pink-figma.png")}
             alt=""
@@ -780,7 +780,7 @@ function SkillsSection() {
                 ハンバーガーの×がズレる / header 幅がおかしい /
                 <br />
                 アライメントが微妙にズレている等。
-                <span className="absolute bottom-[85px] right-[-17px] h-[20px] w-[47px] rotate-[35deg] overflow-hidden lg:bottom-auto lg:right-[-26px] lg:top-[-18px] lg:h-[30px] lg:w-[70px]">
+                <span className="absolute bottom-[85px] right-[-17px] h-[20px] w-[47px] rotate-[35deg] overflow-hidden lg:bottom-auto lg:right-[-12px] lg:top-[-30px] lg:h-[21px] lg:w-[50px]">
                   <Image
                     src={asset("pet-1.png")}
                     alt=""
@@ -800,15 +800,15 @@ function SkillsSection() {
 
 function CareerSection() {
   return (
-    <section id="career" className="relative isolate px-4 pb-16 pt-16 sm:px-8">
+    <section id="career" className="relative isolate px-4 pb-16 pt-16 sm:px-8 lg:pb-[190px] lg:pt-[110px]">
       <svg
         aria-hidden="true"
         className="absolute inset-x-[-90px] bottom-[-50px] top-0 -z-10 h-[calc(100%+50px)] w-[calc(100%+180px)] sm:inset-x-[-34px] sm:bottom-[-6px] sm:top-0 sm:h-full sm:w-[calc(100%+68px)]"
         preserveAspectRatio="none"
-        viewBox="0 0 1024 760"
+        viewBox="0 0 1402 1226"
       >
         <path
-          d="M76 34C214-10 358 52 500 20C635-10 793 8 906 76C996 130 994 260 972 386C950 513 995 644 891 698C775 758 632 702 504 715C362 729 227 786 121 706C21 630 51 493 50 365C50 234-27 99 76 34Z"
+          d="M1380.85 608.217C1366.25 825.809 1447.33 1033.77 1275.86 1153.97C1134.86 1252.8 706.177 1189.83 537.758 1199.18C345.392 1209.85 226.939 1281.62 100.364 1127.67C-26.2476 973.667 -8.81833 775.159 22.9082 572.954C47.7028 414.928 -42.2906 196.06 70.3967 89.4821C181.179 -15.2937 478.544 40.1334 626.108 27.3596C805.839 11.8012 1124.55 -40.8747 1276.45 61.8717C1452.81 181.164 1395.75 386.116 1380.85 608.217Z"
           fill="#BBE2F6"
         />
       </svg>
@@ -875,7 +875,7 @@ function CareerSection() {
           </article>
 
           <article className="relative rounded-[20px] border-[3px] border-[#d4d4d4] bg-white px-6 py-5">
-            <span className="absolute right-[-28px] top-[-24px] z-[2] h-[44px] w-[110px] rotate-[25deg] overflow-hidden">
+            <span className="absolute right-[-28px] top-[-24px] z-[2] h-[44px] w-[110px] rotate-[25deg] overflow-hidden lg:right-[-36px] lg:top-[-1px]">
               <Image
                 src={asset("tape-pink-figma.png")}
                 alt=""
@@ -918,7 +918,7 @@ function CareerSection() {
             alt=""
             width={427}
             height={534}
-            className="absolute bottom-[-54px] right-[120px] hidden w-[230px] object-contain md:block"
+            className="absolute bottom-[-54px] right-[120px] hidden w-[230px] object-contain md:block lg:bottom-[-164px] lg:right-[39px] lg:w-[318px]"
           />
         </article>
       </div>
@@ -1005,24 +1005,6 @@ function ContactSection() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="px-4 pb-10 pt-3 sm:px-8">
-      <div className="flex flex-col items-center gap-5 border-t-[3px] border-white pt-5 text-white sm:flex-row sm:justify-between sm:gap-0">
-        <Logo compact />
-        <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 font-display text-xs font-black">
-          {["Top", ...navItems].map((item) => (
-            <a key={item} href={item === "Top" ? "#" : `#${item.toLowerCase()}`}>
-              {item}
-            </a>
-          ))}
-        </nav>
-        <p className="font-display text-xs font-black">© 2026 ASAHI KUROSU</p>
-      </div>
-    </footer>
-  );
-}
-
 export function PortfolioPage() {
   return (
     <main id="legacy-home" className="min-h-screen w-full overflow-x-clip bg-[#f1b1c0] text-[#603d23]">
@@ -1036,7 +1018,7 @@ export function PortfolioPage() {
         <SkillsSection />
         <CareerSection />
         <ContactSection />
-        <Footer />
+        <SiteFooter className="px-4 pb-10 pt-3 sm:px-8" />
       </div>
     </main>
   );

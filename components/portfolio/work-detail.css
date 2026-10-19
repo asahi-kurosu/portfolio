@@ -226,14 +226,6 @@
   .detail-subshots-illustration {
     width: 230px;
   }
-
-  .detail-footer p {
-    font-size: 12px;
-  }
-
-  .detail-footer nav {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 1023px) {
