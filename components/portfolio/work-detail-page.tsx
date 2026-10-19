@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SiteFooter } from "./site-footer";
 import "./work-detail.css";
 
 export type WorkSlug = "mykitchen" | "mogumogu";
@@ -164,5 +165,5 @@ function Mogumogu() {
 }
 
 export function WorkDetailPage({ slug }: { slug: WorkSlug }) {
-  return <div data-work={slug} className="work-detail min-h-screen bg-white text-[#603d23]"><Header /><main className="bg-[#f1b1c0] px-[13px] py-4 lg:px-8 lg:py-8"><article className="detail-body mx-auto max-w-xl rounded-[34px] bg-[#fffef6] px-5 py-7 shadow-sm lg:max-w-[1200px] lg:rounded-[56px] lg:px-14 lg:py-12">{slug === "mykitchen" ? <MyKitchen /> : <Mogumogu />}<footer className="detail-footer mt-12 border-t-2 border-[#f1b1c0] py-8 text-center text-sm font-black text-[#db8a9d]"><div className="flex flex-col items-center gap-5"><Link href="/" aria-label="トップへ戻る"><Image src={asset("logo.png")} alt="" width={82} height={44} className="h-auto w-[74px]" /></Link><nav className="flex flex-wrap justify-center gap-x-4 gap-y-2"><Link href="/">Top</Link><Link href="/#about">About</Link><Link href="/#works">Works</Link><Link href="/#skills">Skills</Link><Link href="/#career">Career</Link><Link href="/#contact">Contact</Link></nav><p className="text-xs">© 2026 ASAHI KUROSU</p></div></footer></article></main></div>;
+  return <div data-work={slug} className="work-detail min-h-screen bg-white text-[#603d23]"><Header /><main className="bg-[#f1b1c0] px-[13px] py-4 lg:px-8 lg:py-8"><article className="detail-body mx-auto max-w-xl rounded-[34px] bg-[#fffef6] px-5 py-7 shadow-sm lg:max-w-[1200px] lg:rounded-[56px] lg:px-14 lg:py-12">{slug === "mykitchen" ? <MyKitchen /> : <Mogumogu />}<SiteFooter tone="pink" hrefBase="/" className="detail-footer mt-12" /></article></main></div>;
 }
