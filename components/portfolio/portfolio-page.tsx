@@ -556,13 +556,18 @@ function WorksSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-[-70px] bottom-0 top-[-22px] z-0 sm:left-1/2 sm:right-auto sm:w-screen sm:-translate-x-1/2"
       >
-        <Image
-          src={asset("works-bg-figma-latest.png")}
-          alt=""
-          fill
-          sizes="1024px"
-          className="object-fill"
-        />
+        {/* Figma "Works/background" vector, cropped to the visible frame. Kept as SVG so the
+            edges stay crisp when mobile stretches it; the bottom polyline is eased into curves. */}
+        <svg
+          className="absolute inset-0 h-full w-full"
+          preserveAspectRatio="none"
+          viewBox="236 0 1426 898"
+        >
+          <path
+            d="M222.222 10.9544C722.222 -50.0473 1277.22 169.453 1690.22 41.9532C2103.22 -85.5464 1662.22 897.954 1662.22 897.954H1307.72C1123.72 897.954 1031.72 873.453 939.722 873.453C760.322 873.453 401.622 897.954 222.222 897.954C222.222 897.954 -277.778 71.9562 222.222 10.9544Z"
+            fill="#BBE2F6"
+          />
+        </svg>
       </div>
       <div className="relative z-[1]">
         <SectionTitle color="text-[#4c8ec5]" underlineColor="bg-[#4c8ec5]">
