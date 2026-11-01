@@ -681,7 +681,7 @@ function SkillsSection() {
             className="object-fill"
           />
         </div>
-        <span className="absolute left-[-26px] top-[-28px] z-[2] h-[40px] w-[112px] rotate-[-15deg] overflow-hidden sm:left-[54px] lg:left-[41px] lg:top-[-4px]">
+        <span className="absolute left-[-26px] top-[-28px] z-[2] h-[40px] w-[112px] rotate-[-15deg] overflow-hidden sm:left-[54px] lg:left-[51px] lg:top-[10px]">
           <Image
             src={asset("tape-pink-figma.png")}
             alt=""
@@ -803,7 +803,7 @@ function CareerSection() {
     <section id="career" className="relative isolate px-4 pb-16 pt-16 sm:px-8 lg:pb-[190px] lg:pt-[110px]">
       <svg
         aria-hidden="true"
-        className="absolute inset-x-[-90px] bottom-[-50px] top-0 -z-10 h-[calc(100%+50px)] w-[calc(100%+180px)] sm:inset-x-[-34px] sm:bottom-[-6px] sm:top-0 sm:h-full sm:w-[calc(100%+68px)]"
+        className="absolute inset-x-[-90px] bottom-[-16px] top-0 -z-10 h-[calc(100%+16px)] w-[calc(100%+180px)] sm:inset-x-[-34px] sm:bottom-[-6px] sm:top-0 sm:h-full sm:w-[calc(100%+68px)]"
         preserveAspectRatio="none"
         viewBox="0 0 1402 1226"
       >
